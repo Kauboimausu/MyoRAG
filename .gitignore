@@ -1,0 +1,13 @@
+# Datos crudos: PDFs con licencias mixtas y ~230 MB; TEI y BioC se regeneran
+data/raw/
+
+# Secretos (llave de API)
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+CLAUDE.md
