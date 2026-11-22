@@ -982,5 +982,430 @@
     "seccion": null,
     "notas": "Menciones cercanas: lin2024c (Liu et al. 2019), lin2025 (Gautam et al.) y phinyomark2018a (DBN para ángulos del miembro inferior al caminar).",
     "split": null
+  },
+  {
+    "id": "q49",
+    "tipo": "un_fragmento",
+    "origen": "claude",
+    "estado": "por_verificar",
+    "pregunta_es": "En el Signal Transformer de Moslhi et al., ¿cómo se convierten las lecturas de los electrodos en una entrada tipo imagen?",
+    "pregunta_en": "In the Signal Transformer by Moslhi et al., how are the electrode readings turned into an image-like input?",
+    "respuesta_es": "Las 10 lecturas de los electrodos en un instante (un vector de 10 × 1) se reacomodan en una matriz de 2 × 5, que llaman \"Matrix signals\". Después se normalizan, se aumentan con volteos y rotaciones aleatorias y se redimensionan a 72 × 72. El transformer divide esa matriz en parches, les suma embeddings de posición y un token de clase (CLS), y clasifica con una cabeza MLP.",
+    "respuesta_en": "The 10 electrode readings at one time instant (a 10 × 1 vector) are reshaped into a 2 × 5 matrix, called \"Matrix signals\". They are then normalized, augmented with random flipping and rotation, and resized to 72 × 72. The transformer splits this matrix into patches, adds position embeddings and a class (CLS) token, and classifies with an MLP head.",
+    "evidencia": {
+      "moslhi2024": [
+        "This matrix is aptly referred to as",
+        "Each matrix signal was resized to 72"
+      ]
+    },
+    "seccion": "3.5 \"Classification using ST\"",
+    "notas": null,
+    "split": null
+  },
+  {
+    "id": "q50",
+    "tipo": "un_fragmento",
+    "origen": "claude",
+    "estado": "por_verificar",
+    "pregunta_es": "En NinaPro DB1, ¿mejora la accuracy del Signal Transformer de Moslhi et al. si se usan features de FFT o de wavelets en vez de la señal cruda?",
+    "pregunta_en": "On NinaPro DB1, does the accuracy of the Signal Transformer by Moslhi et al. improve when FFT or wavelet features are used instead of the raw signal?",
+    "respuesta_es": "No. En NinaPro DB1 la señal cruda da 85.97%, la FFT 85.30% y la transformada wavelet continua con sombrero mexicano 85.92%. La FFT baja un poco la accuracy y la wavelet queda casi igual que la señal cruda.",
+    "respuesta_en": "No. On NinaPro DB1 the raw signal gives 85.97%, FFT 85.30% and the continuous wavelet transform with the Mexican hat 85.92%. FFT slightly lowers accuracy and the wavelet stays about the same as the raw signal.",
+    "evidencia": {
+      "moslhi2024": [
+        "Summary of the results of the three models for NinaPro DB1",
+        "ST-Nina-RAW 85.97"
+      ]
+    },
+    "seccion": "4.1 \"Training on NinaPro DB1\" (Tabla 8)",
+    "notas": "Sale de la Tabla 8. Ojo: en CapgMyo DB-A el texto dice 74.90% para FFT y la Tabla 9 dice 79.90%; el paper se contradice.",
+    "split": null
+  },
+  {
+    "id": "q51",
+    "tipo": "un_fragmento",
+    "origen": "claude",
+    "estado": "por_verificar",
+    "pregunta_es": "Según la revisión de Li et al. (2021), ¿qué etapas tiene el enfoque estándar de reconocimiento de gestos con sEMG y deep learning?",
+    "pregunta_en": "According to the review by Li et al. (2021), what stages make up the standard approach to sEMG gesture recognition with deep learning?",
+    "respuesta_es": "Seis etapas: adquisición de datos, preprocesamiento, extracción de características, clasificación de patrones, post-procesamiento y evaluación del desempeño. El preprocesamiento suele tener tres pasos: suavizado, normalización y segmentación.",
+    "respuesta_en": "Six stages: data acquisition, data preprocessing, feature extraction, pattern classification, post-processing and performance evaluation. Preprocessing usually has three steps: smoothing, normalization and segmentation.",
+    "evidencia": {
+      "li2021": [
+        "which are data acquisition, data preprocessing, feature extraction, classification of patterns, post-processing, and performance evaluation",
+        "smoothing, normalization, segmentation"
+      ]
+    },
+    "seccion": "2 \"Pattern recognition-based sEMG\"",
+    "notas": null,
+    "split": null
+  },
+  {
+    "id": "q52",
+    "tipo": "un_fragmento",
+    "origen": "claude",
+    "estado": "por_verificar",
+    "pregunta_es": "¿En cuántas categorías divide la taxonomía GRASP los agarres de la mano, y con qué criterios?",
+    "pregunta_en": "Into how many categories does the GRASP taxonomy divide hand grasps, and by which criteria?",
+    "respuesta_es": "En 33 categorías, según cuatro parámetros: la posición del pulgar, el tipo de fuerza, el tipo de oposición y la asignación de dedos virtuales.",
+    "respuesta_en": "Into 33 categories, according to four parameters: thumb position, power type, opposition type and virtual finger assignments.",
+    "evidencia": {
+      "li2021": [
+        "The hand grasping is divided into 33 categories according to four parameters",
+        "thumb position, power type, opposition type, and virtual finger assignments"
+      ]
+    },
+    "seccion": "1 \"Introduction\"",
+    "notas": "La taxonomía es de Feix et al.; en el corpus solo aparece citada en Li 2021.",
+    "split": null
+  },
+  {
+    "id": "q53",
+    "tipo": "un_fragmento",
+    "origen": "claude",
+    "estado": "por_verificar",
+    "pregunta_es": "¿Qué nueva forma de clasificar los modelos de reconocimiento de gestos mioeléctricos proponen Le et al. (2025)?",
+    "pregunta_en": "What new way of categorizing myoelectric gesture recognition models do Le et al. (2025) propose?",
+    "respuesta_es": "Una taxonomía con dos ejes en lugar de \"machine learning clásico contra deep learning\". (1) Por cómo extraen características: spatially agnostic (las mismas características temporales en todos los canales, lo más común e interpretable), spatially specific (características distintas por canal) y spatiotemporal (características espaciales y temporales juntas, como la mayoría de los modelos de deep learning; es la menos interpretable). (2) Por la frontera de decisión: lineal (más simple y menos propensa al sobreajuste) o no lineal (separa datos complejos, pero se sobreajusta más ante cambios de distribución).",
+    "respuesta_en": "A taxonomy with two axes instead of \"classical machine learning versus deep learning\". (1) By feature extraction approach: spatially agnostic (the same temporal features on every channel; the most common and interpretable), spatially specific (different features per channel) and spatiotemporal (spatial and temporal features together, as in most deep learning models; the least interpretable). (2) By decision boundary: linear (simpler and less prone to overfitting) or non-linear (separates complex data, but overfits more under distribution shift).",
+    "evidencia": {
+      "le2025": [
+        "Spatially Agnostic Feature Extraction",
+        "this configuration is the least interpretable",
+        "into linear and non-linear types"
+      ]
+    },
+    "seccion": "2.3 \"Taxonomies for categorizing myoelectric hand gesture recognition models\"",
+    "notas": null,
+    "split": null
+  },
+  {
+    "id": "q54",
+    "tipo": "un_fragmento",
+    "origen": "claude",
+    "estado": "por_verificar",
+    "pregunta_es": "¿Cómo es la arquitectura de la CNN multi-escala de Ding et al. (2018) y qué entrada recibe?",
+    "pregunta_en": "What does the multi-scale CNN architecture by Ding et al. (2018) look like, and what input does it take?",
+    "respuesta_es": "Se llama C-B1PB2 y tiene dos bloques convolucionales en paralelo. El bloque 1 usa filtros de 1 × 13 con max pooling; el bloque 2 usa kernels más grandes, de 1 × 57, sin pooling. Las salidas se concatenan y pasan a un clasificador de tres capas densas (520, 260 y 130 unidades) con softmax de 17 unidades, una por gesto. La entrada son imágenes de sEMG de 12 × 200: 12 electrodos y ventanas de 100 ms.",
+    "respuesta_en": "It is called C-B1PB2 and has two parallel convolutional blocks. Block 1 uses 1 × 13 filters with max pooling; Block 2 uses larger 1 × 57 kernels without pooling. The outputs are concatenated and fed to a classifier with three fully connected layers (520, 260 and 130 units) and a 17-unit softmax, one per gesture. The input is 12 × 200 sEMG images: 12 electrodes and 100 ms windows.",
+    "evidencia": {
+      "ding2018": [
+        "Convolution with two Parallel Block (C-B1PB2)",
+        "The pooling layers were not adopted in Block 2"
+      ]
+    },
+    "seccion": "2.2.2 \"Feature Extraction and Classification\"",
+    "notas": "El texto de este PDF sale duplicado y encimado en pdftotext; revisa cómo lo deja GROBID.",
+    "split": null
+  },
+  {
+    "id": "q55",
+    "tipo": "un_fragmento",
+    "origen": "claude",
+    "estado": "por_verificar",
+    "pregunta_es": "¿Con qué equipo y a qué frecuencia de muestreo se registró el sEMG de putEMG?",
+    "pregunta_en": "With what equipment and at what sampling rate was the putEMG sEMG recorded?",
+    "respuesta_es": "Con un amplificador de biopotenciales multicanal MEBA de OT Bioelettronica, muestreando a 5120 Hz con un convertidor analógico-digital de 12 bits y ganancia de 200. Se aplicó un filtro pasa-banda analógico de 3 a 900 Hz y se registró en modo monopolar con 24 electrodos en tres bandas elásticas (una matriz de 3 × 8).",
+    "respuesta_en": "With a MEBA multi-channel biosignal amplifier by OT Bioelettronica, sampling at 5120 Hz with a 12-bit analog-to-digital converter and a gain of 200. An analog 3-900 Hz band-pass filter was applied, and signals were recorded in monopolar mode with 24 electrodes on three elastic bands (a 3 × 8 matrix).",
+    "evidencia": {
+      "kaczmarek2019": [
+        "Data was sampled at 5120 Hz",
+        "MEBA by OT Bioelettronica"
+      ]
+    },
+    "seccion": "2.1 \"Experimental Setup\"",
+    "notas": null,
+    "split": null
+  },
+  {
+    "id": "q56",
+    "tipo": "un_fragmento",
+    "origen": "claude",
+    "estado": "por_verificar",
+    "pregunta_es": "En putEMG, ¿cómo se corrigieron las etiquetas de los gestos cuando los participantes se equivocaban o reaccionaban tarde?",
+    "pregunta_en": "In putEMG, how were gesture labels corrected when participants made mistakes or reacted late?",
+    "respuesta_es": "Se re-etiquetaron todos los gestos a partir del video grabado. Una red VGGNet entrenada para reconocer los gestos en video logró 98.7% de accuracy; su salida se filtró con un filtro de mediana y se comparó con la trayectoria indicada. Cada gesto podía empezar hasta 250 ms antes de la indicación y terminar hasta 2000 ms después de la siguiente; las ejecuciones contradictorias se marcaron con -1 para no procesarlas.",
+    "respuesta_en": "All gestures were relabelled from the recorded video. A VGGNet trained for video gesture recognition reached 98.7% accuracy; its output was median-filtered and referenced to the given trajectory. Each gesture could begin up to 250 ms before the prompt and end up to 2000 ms after the next prompt; contradictory executions were labelled -1 so they would not be processed.",
+    "evidencia": {
+      "kaczmarek2019": [
+        "all gestures were relabelled based on the captured video stream",
+        "was trained and applied to video gesture recognition with 98.7% accuracy"
+      ]
+    },
+    "seccion": "2.4 \"Pre-Processing and Labelling\"",
+    "notas": null,
+    "split": null
+  },
+  {
+    "id": "q57",
+    "tipo": "un_fragmento",
+    "origen": "claude",
+    "estado": "por_verificar",
+    "pregunta_es": "En el dataset de 65 gestos de Malešević et al., ¿cómo eligieron qué movimientos compuestos registrar?",
+    "pregunta_en": "In the 65-gesture dataset by Malešević et al., how did they choose which compound movements to record?",
+    "respuesta_es": "Partieron de 16 movimientos básicos de un grado de libertad: flexión y extensión de cada dedo D2 a D5, cuatro del pulgar y cuatro de la muñeca. Para los compuestos usaron reglas: excluir co-contracciones de una misma articulación; en movimientos de dos dedos, solo flexiones de dedos adyacentes; excluir mezclas de flexión y extensión, salvo la extensión de muñeca con flexión de dedos y el gesto de señalar; para movimientos de varias articulaciones, elegir los agarres y gestos más comunes; y agregar dos extensiones de D2 a D5 porque estaban subrepresentadas. En total fueron 66 movimientos (65 únicos), con cinco repeticiones cada uno.",
+    "respuesta_en": "They started from 16 basic one-degree-of-freedom movements: flexion and extension of each finger D2 to D5, four for the thumb and four for the wrist. For compound movements they applied rules: exclude co-contractions of a single joint; for two-finger movements, only flexions of adjacent fingers; exclude mixtures of flexion and extension, except wrist extension with finger flexions and pointing; for multi-joint movements, pick the most common grips and gestures; and add two D2-D5 extensions because extensions were underrepresented. In total there were 66 movements (65 unique), with five repetitions each.",
+    "evidencia": {
+      "malesevic2021": [
+        "In this study, 16 basic/1DoF movements were selected",
+        "All co-contractions of a single joint were excluded from the list",
+        "only flexions of adjacent fingers were included in the list"
+      ]
+    },
+    "seccion": "Methods, \"Recording protocol\"",
+    "notas": null,
+    "split": null
+  },
+  {
+    "id": "q58",
+    "tipo": "un_fragmento",
+    "origen": "claude",
+    "estado": "por_verificar",
+    "pregunta_es": "¿Cómo se colocaron los electrodos en GrabMyo y por qué no se marcó su posición en la piel entre sesiones?",
+    "pregunta_en": "How were the electrodes placed in GrabMyo, and why was their position not marked on the skin between sessions?",
+    "respuesta_es": "Se usaron 28 electrodos monopolares en cuatro anillos: dos en el antebrazo con ocho electrodos cada uno (ocho pares bipolares) y dos en la muñeca con seis cada uno (seis pares bipolares), con 2 cm entre anillos. El primer electrodo de cada anillo se colocó en la línea central del pliegue del codo. No se dejaron marcas en la piel a propósito, para introducir incertidumbre en la posición exacta, como en la vida real, donde no se puede volver a poner una banda en el mismo lugar. Se registró con un amplificador EMGUSB2+ a 2048 Hz y ganancia de 500.",
+    "respuesta_en": "28 monopolar electrodes were used in four rings: two on the forearm with eight electrodes each (eight bipolar pairs) and two on the wrist with six each (six bipolar pairs), with 2 cm between rings. The first electrode of each ring was placed on the center line of the elbow crease. No marks were left on the skin on purpose, to introduce uncertainty in the exact position, as in real life, where a band cannot be placed in exactly the same spot across sessions. Signals were recorded with an EMGUSB2+ amplifier at 2048 Hz and a gain of 500.",
+    "evidencia": {
+      "pradhan2022": [
+        "a total of 28 monopolar sEMG electrodes were used for each session",
+        "This intentionally induced uncertainty in the exact electrode positions"
+      ]
+    },
+    "seccion": "Methods, \"Acquisition setup\"",
+    "notas": null,
+    "split": null
+  },
+  {
+    "id": "q59",
+    "tipo": "un_fragmento",
+    "origen": "claude",
+    "estado": "por_verificar",
+    "pregunta_es": "En el estudio offline de Krasoulis et al., ¿cuánto pierde el decodificador si se usan solo los sensores inerciales en lugar de sEMG más IMU?",
+    "pregunta_en": "In the offline study by Krasoulis et al., how much does the decoder lose when only the inertial sensors are used instead of sEMG plus IMU?",
+    "respuesta_es": "Muy poco. Con sEMG más mediciones inerciales, la accuracy balanceada mediana fue de 82.7% en sujetos sin amputación y 77.8% en amputados. Solo con las mediciones inerciales fue de 81.7% y 77.7%, el segundo mejor resultado, seguido por el subconjunto de sensores sEMG-IM (81.2% y 76%); estas dos últimas diferencias no fueron significativas. Además, agregar giroscopio y magnetómetro mejoró significativamente sobre usar solo el acelerómetro.",
+    "respuesta_en": "Very little. With sEMG plus inertial measurements, median balanced accuracy was 82.7% for able-bodied and 77.8% for amputee subjects. With inertial measurements alone it was 81.7% and 77.7%, the second best result, followed by the sEMG-IM sensor subset (81.2% and 76%); the difference between the latter two was not significant. Adding gyroscope and magnetometer data also significantly improved over using the accelerometer alone.",
+    "evidencia": {
+      "krasoulis2017": [
+        "median balanced CA for this condition was 82.7% for able-bodied and 77.8% for amputee subjects",
+        "The second best performance was achieved by the IM decoder"
+      ]
+    },
+    "seccion": "Results, \"Offline analysis\"",
+    "notas": null,
+    "split": null
+  },
+  {
+    "id": "q60",
+    "tipo": "un_fragmento",
+    "origen": "claude",
+    "estado": "por_verificar",
+    "pregunta_es": "¿Qué clasificador, features y ventana usan Krasoulis et al. en su experimento en tiempo real, y qué retraso tuvo el controlador?",
+    "pregunta_en": "Which classifier, features and window do Krasoulis et al. use in their real-time experiment, and what was the controller delay?",
+    "respuesta_es": "Un clasificador de análisis discriminante lineal (LDA), elegido por ser probabilístico y eficiente. De cada canal de sEMG extraen cuatro features del dominio del tiempo: valor absoluto medio (MAV), longitud de onda (WL), coeficientes autorregresivos de orden 4 y log-varianza; de las IMU, el valor medio. La ventana es de 256 ms con incrementos de 50 ms (80% de traslape), y el retraso promedio en tiempo real fue de 170 ms.",
+    "respuesta_en": "A linear discriminant analysis (LDA) classifier, chosen because it is probabilistic and efficient. From each sEMG channel they extract four time-domain features: mean absolute value (MAV), waveform length (WL), 4th-order autoregressive coefficients and log-variance; from the IMUs, the mean value. The window is 256 ms long with 50 ms increments (80% overlap), and the average real-time delay was 170 ms.",
+    "evidencia": {
+      "krasoulis2017": [
+        "The length of the shifting window was set to 256 ms and the increment to 50 ms",
+        "the average delay was 170 ms",
+        "we employed a linear discriminant analysis (LDA) classifier"
+      ]
+    },
+    "seccion": "Methods, \"Signal preprocessing and classifier training\"",
+    "notas": null,
+    "split": null
+  },
+  {
+    "id": "q61",
+    "tipo": "un_fragmento",
+    "origen": "claude",
+    "estado": "por_verificar",
+    "pregunta_es": "¿En qué se diferencian las tres sub-bases de CapgMyo (DB-a, DB-b y DB-c) y para qué se usa cada una?",
+    "pregunta_en": "How do the three CapgMyo sub-databases (DB-a, DB-b and DB-c) differ, and what is each one used for?",
+    "respuesta_es": "DB-a tiene 8 gestos isométricos e isotónicos (los números 13 a 20 de NinaPro) de 18 de los 23 sujetos, sostenidos de 3 a 10 s; sirve para ajustar los hiperparámetros. DB-b tiene los mismos gestos, de 10 sujetos, en dos sesiones de días distintos separadas por más de una semana, así que los electrodos quedan en posiciones un poco distintas; sirve para evaluar el reconocimiento entre sesiones. DB-c tiene 12 movimientos básicos de los dedos (los números 1 a 12 de NinaPro) de 10 sujetos. DB-b y DB-c se usan para evaluar reconocimiento dentro de una sesión, entre sesiones y entre sujetos.",
+    "respuesta_en": "DB-a has 8 isometric and isotonic gestures (numbers 13 to 20 in NinaPro) from 18 of the 23 subjects, held for 3 to 10 s; it is used to tune hyper-parameters. DB-b has the same gestures from 10 subjects, recorded in two sessions on different days more than a week apart, so the electrodes sit at slightly different positions; it is used to evaluate inter-session recognition. DB-c has 12 basic finger movements (numbers 1 to 12 in NinaPro) from 10 subjects. DB-b and DB-c are used to evaluate intra-session, inter-session and inter-subject recognition.",
+    "evidencia": {
+      "du2017": [
+        "DB-b contains the same gesture set as in DB-a but was obtained from 10 of the 23 subjects",
+        "Whereas DB-a was intended to fine-tune hyper-parameters of the recognition model",
+        "DB-c contains 12 basic movements of the fingers"
+      ]
+    },
+    "seccion": "2.1.3 (descripción de las sub-bases)",
+    "notas": null,
+    "split": null
+  },
+  {
+    "id": "q62",
+    "tipo": "un_fragmento",
+    "origen": "claude",
+    "estado": "por_verificar",
+    "pregunta_es": "¿Cómo combina TraHGR sus dos ramas, y qué accuracy logra cada rama por separado en NinaPro DB2?",
+    "pregunta_en": "How does TraHGR combine its two branches, and what accuracy does each branch reach on its own on NinaPro DB2?",
+    "respuesta_es": "TraHGR tiene dos caminos paralelos: TNet, que divide la ventana de sEMG en parches temporales, y FNet, que usa parches de features. Suma los tokens de clase de ambos para la predicción final, y entrena con la suma de tres pérdidas (TNet, FNet y TraHGR). En DB2 completo (49 gestos) con ventanas de 200 ms, TNet solo logra 83.39%, FNet solo 80.72% y la versión TraHGR-Huge combinada 86.18%.",
+    "respuesta_en": "TraHGR has two parallel paths: TNet, which splits the sEMG window into temporal patches, and FNet, which uses featural patches. It adds the class tokens of both for the final prediction and trains with the sum of three losses (TNet, FNet and TraHGR). On full DB2 (49 gestures) with 200 ms windows, TNet alone reaches 83.39%, FNet alone 80.72%, and the combined TraHGR-Huge 86.18%.",
+    "evidencia": {
+      "zabihi2023": [
+        "we add the output of the TNet and FNet class tokens to get the final representation",
+        "TNet 83.39",
+        "FNet 80.72"
+      ]
+    },
+    "seccion": "Arquitectura (Fig. 1) y Tabla II",
+    "notas": "Los números por rama salen de la Tabla II.",
+    "split": null
+  },
+  {
+    "id": "q63",
+    "tipo": "un_fragmento",
+    "origen": "claude",
+    "estado": "por_verificar",
+    "pregunta_es": "¿Con qué dataset y qué armband trabajan Côté-Allard et al. (2020) en su comparación de features aprendidas y hechas a mano, y cómo segmentan la señal?",
+    "pregunta_en": "Which dataset and armband do Côté-Allard et al. (2020) use in their comparison of learned and handcrafted features, and how do they segment the signal?",
+    "respuesta_es": "Usan el 3DC Dataset: 22 participantes sin amputación que hacen diez gestos de mano y muñeca más la posición neutra, registrados con el 3DC Armband, un brazalete inalámbrico de 10 canales, electrodos secos e impreso en 3D, que muestrea a 1000 Hz por canal. La señal se segmenta en ventanas de 151 ms con 100 ms de traslape y se filtra pasa-banda entre 20 y 495 Hz. Cuatro ciclos sirven para entrenar y otros cuatro, grabados tras 5 minutos de descanso, para probar.",
+    "respuesta_en": "They use the 3DC Dataset: 22 able-bodied participants performing ten hand/wrist gestures plus neutral, recorded with the 3DC Armband, a wireless, 10-channel, dry-electrode, 3D-printed armband that samples at 1000 Hz per channel. The signal is segmented into 151 ms frames with a 100 ms overlap and band-pass filtered between 20 and 495 Hz. Four cycles are used for training and another four, recorded after a 5-minute break, for testing.",
+    "evidencia": {
+      "coteallard2020a": [
+        "featuring 22 able-bodied participants performing ten hand/wrist gestures",
+        "the data from each participant was segmented into 151 ms frames with an overlap of 100 ms",
+        "a wireless, 10-channel, dry-electrode, 3D printed sEMG armband"
+      ]
+    },
+    "seccion": "2.1 \"EMG Data\"",
+    "notas": null,
+    "split": null
+  },
+  {
+    "id": "q64",
+    "tipo": "un_fragmento",
+    "origen": "claude",
+    "estado": "por_verificar",
+    "pregunta_es": "¿En qué grupos funcionales se organizan las features de EMG hechas a mano que usan Côté-Allard et al. (2020), y cuántas son?",
+    "pregunta_en": "Into which functional groups are the handcrafted EMG features used by Côté-Allard et al. (2020) organized, and how many are there?",
+    "respuesta_es": "En cinco grupos: amplitud y potencia de la señal (SAP, como RMS y MAV), información de frecuencia (FI, como la frecuencia media o los cruces por cero), complejidad no lineal (NLC, como la entropía de muestra), modelado de series de tiempo (TSM, como los coeficientes autorregresivos) y únicos (UNI, como medidas de calidad de la señal). Son 56 métodos que producen 79 features en total: 25 de SAP, 5 de FI, 6 de NLC, 7 de TSM y 13 de UNI.",
+    "respuesta_en": "Into five groups: signal amplitude and power (SAP, e.g., RMS and MAV), frequency information (FI, e.g., mean frequency or zero crossings), nonlinear complexity (NLC, e.g., sample entropy), time-series modeling (TSM, e.g., autoregressive coefficients) and unique (UNI, e.g., signal quality measures). There are 56 methods producing 79 features in total: 25 SAP, 5 FI, 6 NLC, 7 TSM and 13 UNI methods.",
+    "evidencia": {
+      "coteallard2020a": [
+        "signal amplitude and power (SAP), nonlinear complexity (NLC), frequency information (FI), time-series modeling (TSM), and unique (UNI)",
+        "a comprehensive subset of 79 of the most commonly used features"
+      ]
+    },
+    "seccion": "2.2 \"Handcrafted Features\"",
+    "notas": null,
+    "split": null
+  },
+  {
+    "id": "q65",
+    "tipo": "un_fragmento",
+    "origen": "claude",
+    "estado": "por_verificar",
+    "pregunta_es": "¿Qué protocolos experimentales se usan en la literatura para estudiar el efecto de la posición del brazo en el control mioeléctrico, y cuál es el más común?",
+    "pregunta_en": "Which experimental protocols are used in the literature to study the effect of limb position on myoelectric control, and which is the most common?",
+    "respuesta_es": "Cuatro: (1) orientación del antebrazo estática, (2) posición del brazo estática, (3) espacio dinámico en 2D, con transiciones entre ángulos de codo y muñeca, y (4) espacio dinámico en 3D, con transiciones de hombro, codo y muñeca, como alcanzar y agarrar o actividades de la vida diaria. El más común es el de posición estática del brazo: la mitad de los experimentos revisados, con un promedio de 8 posiciones y un máximo de 91.",
+    "respuesta_en": "Four: (1) static forearm orientation, (2) static limb position, (3) dynamic 2D space, with transitions between elbow and wrist angles, and (4) dynamic 3D space, with shoulder, elbow and wrist transitions, such as reach-to-grasp or activities of daily living. The most common is the static limb position protocol: half of the surveyed experiments, with an average of 8 positions and a maximum of 91.",
+    "evidencia": {
+      "campbell2020": [
+        "(1) the static forearm orientation protocol, (2) the static limb position protocol",
+        "Among the articles surveyed, these make up 50% of all experiments"
+      ]
+    },
+    "seccion": "3.3 \"Experimental Protocols\"",
+    "notas": null,
+    "split": null
+  },
+  {
+    "id": "q66",
+    "tipo": "un_fragmento",
+    "origen": "claude",
+    "estado": "por_verificar",
+    "pregunta_es": "¿Qué estrategias se han propuesto para reducir la pérdida de desempeño por cambios en la posición del brazo?",
+    "pregunta_en": "What strategies have been proposed to reduce the performance loss caused by changes in limb position?",
+    "respuesta_es": "Campbell et al. las agrupan en cuatro: (1) algoritmos de extracción de features, reducción de dimensión y clasificación menos sensibles a la posición; (2) entrenar con movimientos registrados en muchas posiciones estáticas y dinámicas; (3) mejorar la generalización entre posiciones con transfer learning; y (4) agregar mediciones de la posición del brazo con otros sensores.",
+    "respuesta_en": "Campbell et al. group them into four: (1) feature extraction, dimensionality reduction and classification algorithms that are less sensitive to position; (2) training with motions collected in many static and dynamic positions; (3) improving generalization across positions with transfer learning; and (4) adding limb position measurements from extra sensor modalities.",
+    "evidencia": {
+      "campbell2020": [
+        "improving generalization of features across positions through transfer learning",
+        "incorporating limb position measurements taken from extra sensor modalities"
+      ]
+    },
+    "seccion": "3.4 \"State-of-the-Art Approaches\"",
+    "notas": "Cerca: q46 y rumman2024 tratan la orientación del antebrazo, pero no estas estrategias.",
+    "split": null
+  },
+  {
+    "id": "q67",
+    "tipo": "un_fragmento",
+    "origen": "claude",
+    "estado": "por_verificar",
+    "pregunta_es": "Según el análisis espectral de Pizzolato et al., ¿qué limitaciones tiene la señal del brazalete Myo?",
+    "pregunta_en": "According to the spectral analysis by Pizzolato et al., what are the limitations of the Myo armband signal?",
+    "respuesta_es": "Su espectro queda limitado entre 0 y 100 Hz por la frecuencia de muestreo de 200 Hz, así que no captura todo el espectro del sEMG (que llega a 300-500 Hz), aunque conserva casi toda la información útil para clasificar movimientos. El espectro cae a 50 Hz por el filtro notch contra la interferencia de la red eléctrica, y la amplitud está limitada entre -128 y 127 en unidades arbitrarias del Myo. Aun así, la señal es estable y no se altera al tocar la carcasa ni cerca de campos electromagnéticos.",
+    "respuesta_en": "Its spectrum is limited to 0-100 Hz by the 200 Hz sampling rate, so it does not capture the full sEMG spectrum (which reaches 300-500 Hz), although it keeps most of the information needed for movement classification. The spectrum drops at 50 Hz because of the notch filter against power-line interference, and the amplitude is limited between -128 and 127 arbitrary Myo units. Even so, the signal is stable and is not disturbed by touching the enclosure or by nearby electromagnetic fields.",
+    "evidencia": {
+      "pizzolato2017": [
+        "the spectrum is limited between 0 Hz and 100 Hz due to the sampling frequency of the device",
+        "the amplitude of the Myo signal is limited between -128 and 127",
+        "the frequency drops at 50 Hz, highlighting the presence of the notch filter"
+      ]
+    },
+    "seccion": "3.1 \"Signal spectrum\"",
+    "notas": "Complementa q02 (Myo a 200 Hz con 8 electrodos) sin repetirla.",
+    "split": null
+  },
+  {
+    "id": "q68",
+    "tipo": "un_fragmento",
+    "origen": "claude",
+    "estado": "por_verificar",
+    "pregunta_es": "¿Con qué dataset y qué protocolo de entrenamiento se evaluó Bioformer?",
+    "pregunta_en": "On which dataset and with what training protocol was Bioformer evaluated?",
+    "respuesta_es": "Con NinaPro DB6: 10 sujetos sin amputación, 10 sesiones en 5 días (mañana y tarde), reposo más siete agarres, 14 electrodos Delsys Trigno a 2 kHz y ventanas de 150 ms con desplazamiento de 15 ms. El entrenamiento tiene dos pasos: un pre-entrenamiento entre sujetos de 100 épocas con los otros nueve sujetos, y un ajuste fino de 20 épocas con los datos del sujeto de prueba. Las sesiones 1 a 5 se usan para entrenar y las 6 a 10 para probar. Después se cuantiza a enteros de 8 bits para correr en el GAP8.",
+    "respuesta_en": "On NinaPro DB6: 10 non-amputee subjects, 10 sessions over 5 days (morning and afternoon), rest plus seven grasps, 14 Delsys Trigno electrodes at 2 kHz and 150 ms windows with a 15 ms slide. Training has two steps: a 100-epoch inter-subject pre-training on the other nine subjects, and a 20-epoch fine-tuning on the test subject's data. Sessions 1 to 5 are used for training and 6 to 10 for testing. The model is then quantized to 8-bit integers to run on the GAP8.",
+    "evidencia": {
+      "burrello2022": [
+        "First, we train the network for 100 epochs with data coming from patients 2-10",
+        "using sessions 1-5 for training and 6-10 for testing",
+        "14 Delsys Trigno sEMG Wireless electrodes"
+      ]
+    },
+    "seccion": "III \"Material and Methods\" (B y C)",
+    "notas": null,
+    "split": null
+  },
+  {
+    "id": "q69",
+    "tipo": "un_fragmento",
+    "origen": "claude",
+    "estado": "por_verificar",
+    "pregunta_es": "En los resultados de referencia de Hyser, ¿qué accuracy logran LDA y la CNN al clasificar los 34 gestos?",
+    "pregunta_en": "In the Hyser benchmark results, what accuracy do LDA and the CNN reach when classifying the 34 gestures?",
+    "respuesta_es": "LDA, entrenado y probado dentro de la misma sesión: 96.86% en las tareas dinámicas y 93.80% en las de mantener el gesto. La CNN, con espectrogramas STFT de ventanas de 250 ms y datos de todos los sujetos juntos: 88.96% y 89.84%. El nivel de azar es de unos 2.94% para 34 clases. Los dos esquemas de validación no son iguales, así que la ventaja de LDA no es una comparación directa.",
+    "respuesta_en": "LDA, trained and tested within the same session: 96.86% for the dynamic tasks and 93.80% for the gesture maintenance tasks. The CNN, using STFT spectrograms of 250 ms windows and data from all subjects pooled: 88.96% and 89.84%. Chance level is about 2.94% for 34 classes. The two validation schemes differ, so LDA's advantage is not a direct comparison.",
+    "evidencia": {
+      "jiang2021": [
+        "Average classification accuracies of 96.86% and 93.80% were achieved for the dynamic and maintenance tasks",
+        "Average accuracies of 88.96% and 89.84% were achieved"
+      ]
+    },
+    "seccion": "III.B \"Pattern Recognition Dataset\" (Results)",
+    "notas": null,
+    "split": null
+  },
+  {
+    "id": "q70",
+    "tipo": "un_fragmento",
+    "origen": "claude",
+    "estado": "por_verificar",
+    "pregunta_es": "¿Qué tan bien estima Hyser la fuerza de cada dedo a partir del HD-sEMG en el dataset de un grado de libertad?",
+    "pregunta_en": "How well does Hyser estimate the force of each finger from HD-sEMG in the one-degree-of-freedom dataset?",
+    "respuesta_es": "Con regresión lineal (modelos FIR con 20 retardos, 390 ms) sobre RMS, WL, ZC y SSC de los 256 canales, reducidos con PCA de 1024 a 200 dimensiones, el error cuadrático medio promedio es de 6.43% MVC en el pulgar, 5.55% en el índice, 5.98% en el medio, 5.36% en el anular y 7.15% en el meñique; 6.09% MVC en promedio para todos los dedos.",
+    "respuesta_en": "With linear regression (FIR models with 20 lags, 390 ms) on RMS, WL, ZC and SSC from the 256 channels, reduced with PCA from 1024 to 200 dimensions, the average root mean square error is 6.43% MVC for the thumb, 5.55% for the index, 5.98% for the middle, 5.36% for the ring and 7.15% for the little finger; 6.09% MVC on average across all fingers.",
+    "evidencia": {
+      "jiang2021": [
+        "The average RMSE of all fingers is 6.09% MVC"
+      ]
+    },
+    "seccion": "III.C \"One-DoF Dataset\" (Results)",
+    "notas": null,
+    "split": null
   }
 ]
