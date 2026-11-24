@@ -254,58 +254,66 @@
     "id": "q13",
     "tipo": "varios_and",
     "origen": "hoja",
-    "estado": "pendiente",
+    "estado": "verificada",
     "pregunta_es": "¿Qué datasets públicos de HD-sEMG existen y cuántos canales tiene cada uno?",
     "pregunta_en": "Which public HD-sEMG datasets exist, and how many channels does each one have?",
-    "respuesta_es": "CapgMyo (Du 2017): 128 canales en una matriz de 8×16, 23 sujetos. Hyser (Jiang 2021): 256 canales en cuatro arreglos de 8×8, 20 sujetos. Malešević 2021: 128 canales en dos rejillas de 8×8 (64 contactos cada una), 20 participantes y 65 gestos. CSL-HDEMG: 192 canales (lo citan Du 2017 y la Tabla 1 de putEMG; su paper original está descartado). putEMG no entra como HD-sEMG: usa 24 electrodos en tres bandas de 8, y su Tabla 1 clasifica como alta densidad a los arreglos de 128 a 196 electrodos.",
-    "respuesta_en": "CapgMyo (Du 2017): 128 channels in an 8x16 array, 23 subjects. Hyser (Jiang 2021): 256 channels in four 8x8 arrays, 20 subjects. Malešević 2021: 128 channels in two 8x8 grids (64 contacts each), 20 participants and 65 gestures. CSL-HDEMG: 192 channels (cited by Du 2017 and in Table 1 of putEMG; its original paper was discarded). putEMG does not count as HD-sEMG: it uses 24 electrodes in three bands of 8, and its Table 1 classifies arrays of 128 to 196 electrodes as high density.",
+    "respuesta_es": "CapgMyo (Du 2017): 128 canales en una matriz de 8×16, 23 sujetos. Hyser (Jiang 2021): 256 canales en cuatro arreglos de 8×8, 20 sujetos. Malešević 2021: 128 canales en dos rejillas de 8×8 (64 contactos cada una), 20 participantes y 65 gestos. CSL-HDEMG: 192 canales (lo citan Du 2017 y la Tabla 1 de putEMG; el paper referenciado no está en el corpus). putEMG no entra como HD-sEMG: utiliza 24 electródos en bandas de 8, y en su propio paper clasifica arreglos de 128 a 196 electrodos como alta densidad",
+    "respuesta_en": "CapgMyo (Du 2017): 128 channels in an 8x16 array, 23 subjects. Hyser (Jiang 2021): 256 channels in four 8x8 arrays, 20 subjects. Malešević 2021: 128 channels in two 8x8 grids (64 contacts each), 20 participants and 65 gestures. CSL-HDEMG: 192 channels (cited by Du 2017 and in Table 1 of putEMG; referenced paper not in corpus). putEMG does not count as HD-sEMG: it uses 24 electrodes in three bands of 8, and its own paper classifies arrays of 128 to 196 electrodes as high density.",
     "evidencia": {
       "du2017": [
         "HD-sEMG data for 128 channels acquired from 23 intact subjects"
       ],
       "jiang2021": [
-        "Four electrode arrays were mounted about the forearm",
         "256-channel HD-sEMG",
-        "Data from 20 subjects were acquired twice"
+        "Data from 20 subjects were acquired twice per subject"
       ],
       "malesevic2021": [
         "recorded using 128 channels within two electrode grids positioned on the forearms of 20 able-bodied volunteers"
       ],
       "kaczmarek2019": [
-        "two main measurement methods: High-Density sEMG",
-        "24 sEMG channels",
-        "CSL-HDEMG"
+        "recordings of 24 sEMG channels",
+        "two main measurement methods: High-Density sEMG 128-196 electrode arrays",
+        "CSL-HDEMG",
+        "192 HD-sEMG"
       ]
     },
     "seccion": "Abstract e introducción de cada paper; Tabla 1 de putEMG",
-    "notas": "Era la pregunta 14 de la hoja. Los 192 canales de CSL-HDEMG solo aparecen en la Tabla 1 de putEMG: sirve para medir si las tablas sobreviven al parseo.",
+    "notas": "Era la pregunta 14 de la hoja. Los 192 canales de CSL-HDEMG solo aparecen en la Tabla 1 de putEMG: sirve para medir si las tablas sobreviven al parseo, también menciona número de sujetos y gestos pero se tienen que referenciar celdas sin texto distintivo",
     "split": null
   },
   {
     "id": "q14",
     "tipo": "varios_and",
     "origen": "hoja",
-    "estado": "pendiente",
+    "estado": "validado",
     "pregunta_es": "¿Qué métodos se han propuesto para tolerar el desplazamiento de electrodos?",
     "pregunta_en": "Which methods have been proposed to tolerate electrode shift?",
-    "respuesta_es": "Tres métodos y un dataset. (1) Lin, Wang y Dai 2024 (Front. Neurosci. 18:1306047): attention-DFCNN, que combina rasgos espaciales y temporales de HD-sEMG; con desplazamiento de 10 mm logra 94.16 ± 3.91% promedio en siete sujetos intactos y 57.08 ± 2.96% en un sujeto amputado. (2) Xu 2020 (Sensors 20:1113): detección y corrección rápida del desplazamiento con ángulo arbitrario, usando un gesto de sincronización y la ubicación interpolada del pico; sin la corrección la accuracy cae de 94.7% a 51.4%. (3) Barona López 2020: corrección de orientación basada en energía; con un gesto de sincronización encuentra el canal de máxima energía y reordena los canales a partir de él; la clasificación sube de 44.5% a 81.2% en modelos generales y de 39.8% a 94.9% en modelos por usuario. (4) SeNic 2022 no propone un método: es un dataset de 8 canales (Myo), 36 sujetos y 7 gestos que registra 11 posiciones de desplazamiento medidas con una regla anular impresa en 3D, para evaluar robustez.",
-    "respuesta_en": "Three methods and one dataset. (1) Lin, Wang and Dai 2024 (Front. Neurosci. 18:1306047): attention-DFCNN, which combines spatial and temporal HD-sEMG features; under a 10 mm shift it reaches an average of 94.16 ± 3.91% on seven intact subjects and 57.08 ± 2.96% on one amputee. (2) Xu 2020 (Sensors 20:1113): fast detection and correction of a shift at an arbitrary angle, using a synchronization gesture and the interpolated peak location; without the correction, accuracy falls from 94.7% to 51.4%. (3) Barona López 2020: energy-based orientation correction; with a synchronization gesture it finds the maximum-energy channel and reorders the channels starting from it; classification rises from 44.5% to 81.2% for general models and from 39.8% to 94.9% for user-specific models. (4) SeNic 2022 does not propose a method: it is an 8-channel (Myo) dataset with 36 subjects and 7 gestures that records 11 shift positions, measured with a 3D-printed annular ruler, to evaluate robustness.",
+    "respuesta_es": "Tres métodos y un dataset. (1) Lin, Wang y Dai 2024 (Front. Neurosci. 18:1306047): attention-DFCNN, que combina rasgos espaciales y temporales de HD-sEMG; con desplazamiento de 10 mm logra 94.16 ± 3.91% promedio en siete sujetos intactos y 57.08 ± 2.96% en un sujeto amputado. (2) Xu 2020 (Sensors 20:1113): detección y corrección rápida del desplazamiento con ángulo arbitrario, usando un gesto de sincronización y la ubicación interpolada del pico; sin la corrección la accuracy cae de 94.7% a 51.4%. (3) Barona López 2020: corrección de orientación basada en energía; con un gesto de sincronización encuentra el canal de máxima energía y reordena los canales a partir de él; la clasificación sube de 44.5% a 81.2% en modelos generales y de 39.8% a 94.9% en modelos por usuario. (4) SeNic 2022 no propone un método, sino un dataset: 8 canales de sEMG, y desplazamientos de electrodos medidos con una regla anular impresa en 3D, con 36 sujetos y 7 gesto bajo condiciones no ideales.",
+    "respuesta_en": "Three methods and one dataset. (1) Lin, Wang and Dai 2024 (Front. Neurosci. 18:1306047): attention-DFCNN, which combines spatial and temporal HD-sEMG features; under a 10 mm shift it reaches an average of 94.16 ± 3.91% on seven intact subjects and 57.08 ± 2.96% on one amputee. (2) Xu 2020 (Sensors 20:1113): fast detection and correction of a shift at an arbitrary angle, using a synchronization gesture and the interpolated peak location; without the correction, accuracy falls from 94.7% to 51.4%. (3) Barona López 2020: energy-based orientation correction; with a synchronization gesture it finds the maximum-energy channel and reorders the channels starting from it; classification rises from 44.5% to 81.2% for general models and from 39.8% to 94.9% for user-specific models. (4) SeNic 2022 does not propose a method, rather a dataset: 8-channel sEMG and electrode shifts measured with a 3D-printed annular ruler, with 36 subjects and 7 gestures in non-ideal conditions.",
     "evidencia": {
       "lin2024a": [
-        "attention deep fast convolutional neural network (attention-DFCNN)",
-        "achieved an average accuracy of 94.16"
+        "an attention deep fast convolutional neural network (attention-DFCNN) model",
+        "improve the robustness and stability by combining the spatial and temporary features",
+        "experimental results for seven able-bodied subjects with the electrodes shift 10 mm",
+        "average accuracy of 94.16%",
+        "results for the amputee subject",
+        "overall accuracy of the proposed model (57.08%"
       ],
       "xu2020": [
+        "combining interpolated peak location and preset synchronous gesture, the developed simplified rapid electrode shift detection and correction at random",
         "fall from 94.7% to 51.4%"
       ],
       "baronalopez2020": [
+        "computation of the maximum energy channel using a synchronization gesture",
+        "EMG are rearranged in a new sequence which starts with the maximum energy channel",
         "increase in performance from 44.5% to 81.2% for classification",
-        "from 39.8% to 94.9% for classification",
-        "computation of the maximum energy channel using a synchronization gesture"
+        "from 39.8% to 94.9% for classification"
       ],
       "zhu2022": [
-        "electrode shifts from an 3D-printed annular ruler",
-        "for one session, there are 11 shifted positions"
+        "consists of 8-channel sEMG signals",
+        "36 subjects participate in our data acquisition experiments of 7 gestures",
+        "non-ideal conditions",
+        "electrode shifts from an 3D-printed annular ruler"
       ]
     },
     "seccion": "Abstract de cada paper; sección 3.1 de Lin 2024; resultados (Tabla 2) de Xu 2020",
@@ -316,24 +324,20 @@
     "id": "q15",
     "tipo": "varios_and",
     "origen": "hoja",
-    "estado": "pendiente",
-    "pregunta_es": "¿Qué arquitecturas tipo transformer se han evaluado en NinaPro DB2 y qué accuracy reportan?",
-    "pregunta_en": "Which transformer-based architectures have been evaluated on NinaPro DB2, and what accuracy do they report?",
-    "respuesta_es": "TraHGR (Zabihi 2023): 86.18% en DB2 completo (49 gestos), 88.91% en DB2-B (17 gestos), 81.44% en DB2-C (23 gestos) y 93.84% en DB2-D (9 gestos); evalúa ventanas de 200, 150 y 100 ms. TEMGNet (Rahimian 2021): 82.93% con ventana de 300 ms y 82.05% con 200 ms, sobre el ejercicio B de DB2. HGREncoder (Macías 2025) no evalúa en NinaPro DB2: entrena y prueba con EMG-EPN-612 y solo cita el 93.84% de TraHGR al revisar trabajos previos.",
-    "respuesta_en": "TraHGR (Zabihi 2023): 86.18% on the full DB2 (49 gestures), 88.91% on DB2-B (17 gestures), 81.44% on DB2-C (23 gestures) and 93.84% on DB2-D (9 gestures); it evaluates 200, 150 and 100 ms windows. TEMGNet (Rahimian 2021): 82.93% with a 300 ms window and 82.05% with 200 ms, on exercise B of DB2. HGREncoder (Macías 2025) does not evaluate on NinaPro DB2: it trains and tests on EMG-EPN-612 and only cites TraHGR's 93.84% when reviewing previous work.",
+    "estado": "validado",
+    "pregunta_es": "¿Qué arquitecturas tipo transformer para clasificación de gestos se han evaluado en NinaPro DB2 y qué accuracy reportan?",
+    "pregunta_en": "Which transformer-based architectures for gesture classification have been evaluated on NinaPro DB2, and what accuracy do they report?",
+    "respuesta_es": "TraHGR (Zabihi 2023): 86.18% en DB2 completo (49 gestos), 88.91% en DB2-B (17 gestos), 81.44% en DB2-C (23 gestos) y 93.84% en DB2-D (9 gestos). TEMGNet (Rahimian 2021): 82.93% con ventana de 300 ms y 82.05% con 200 ms, sobre el ejercicio B de DB2.",
+    "respuesta_en": "TraHGR (Zabihi 2023): 86.18% on the full DB2 (49 gestures), 88.91% on DB2-B (17 gestures), 81.44% on DB2-C (23 gestures) and 93.84% on DB2-D (9 gestures). TEMGNet (Rahimian 2021): 82.93% with a 300 ms window and 82.05% with 200 ms, on exercise B of DB2.",
     "evidencia": {
       "zabihi2023": [
         "The recognition accuracies of the proposed TraHGR architecture are 86.18%, 88.91%, 81.44%, and 93.84%"
       ],
       "rahimian2021a": [
         "achieved a recognition accuracy of 82.93% and 82.05% for window sizes of 300ms and 200ms"
-      ],
-      "macias2025": [
-        "achieved a window-based classification accuracy of 93.84%",
-        "the EMG-EPN-612 dataset was used"
       ]
     },
-    "seccion": "Abstract de TraHGR y de TEMGNet; trabajos relacionados de HGREncoder",
+    "seccion": "Abstract de TraHGR y de TEMGNet",
     "notas": "Ojo: RoFormer (lin2024b) y FIT (lin2024c) también son transformers evaluados en DB2, pero para regresión de ángulos (correlación, no accuracy). Conviene precisar 'para clasificar gestos' en la pregunta.",
     "split": null
   },
@@ -341,7 +345,7 @@
     "id": "q16",
     "tipo": "varios_and",
     "origen": "hoja",
-    "estado": "pendiente",
+    "estado": "validado",
     "pregunta_es": "¿Por qué se degrada el desempeño de los clasificadores de un día a otro?",
     "pregunta_en": "Why does classifier performance degrade from one day to the next?",
     "respuesta_es": "Porque la señal sEMG no es estacionaria. Kyranou 2018 lista las causas: fatiga muscular, desplazamiento de electrodos, cambios en la postura del brazo, adaptación del usuario al dispositivo con el tiempo y diferencias entre sujetos. Du 2017 señala que entre sesiones cambian la posición de los electrodos, la postura del brazo y factores lentos como la fatiga y la impedancia electrodo-piel. Zhai 2017 menciona la colocación de electrodos, el crosstalk y el entorno de registro, con variación notable incluso de un día a otro. Campbell 2020 agrega dos factores de confusión medidos en seis datasets: la posición del miembro (13% menos de desempeño) y la intensidad de contracción (20% menos) frente al escenario controlado.",
@@ -778,11 +782,12 @@
     "evidencia": {
       "phinyomark2018b": [
         "Four EMG datasets: subjects, experiment, and data acquisition",
-        "Original Sampling Rate 4000 Hz"
+        "2000 Hz",
+        "Limb position (5 positions)"
       ]
     },
     "seccion": "Tabla 1",
-    "notas": "Sale de la Tabla 1: mide si las tablas sobreviven al parseo. 'Original Sampling Rate 4000 Hz' depende de cómo linealices la tabla; el pie de tabla es la evidencia más estable.",
+    "notas": "Sale de la Tabla 1: mide si las tablas sobreviven al parseo. Evidencia de tabla: pie de tabla más valores de una sola celda (no frases que crucen celdas).",
     "split": null
   },
   {
@@ -987,9 +992,9 @@
     "id": "q49",
     "tipo": "un_fragmento",
     "origen": "claude",
-    "estado": "por_verificar",
-    "pregunta_es": "En el Signal Transformer de Moslhi et al., ¿cómo se convierten las lecturas de los electrodos en una entrada tipo imagen?",
-    "pregunta_en": "In the Signal Transformer by Moslhi et al., how are the electrode readings turned into an image-like input?",
+    "estado": "verificada",
+    "pregunta_es": "En el Signal Transformer de Moslhi, ¿cómo se convierten las lecturas de los electrodos en una entrada tipo imagen?",
+    "pregunta_en": "In the Signal Transformer by Moslhi, how are the electrode readings turned into an image-like input?",
     "respuesta_es": "Las 10 lecturas de los electrodos en un instante (un vector de 10 × 1) se reacomodan en una matriz de 2 × 5, que llaman \"Matrix signals\". Después se normalizan, se aumentan con volteos y rotaciones aleatorias y se redimensionan a 72 × 72. El transformer divide esa matriz en parches, les suma embeddings de posición y un token de clase (CLS), y clasifica con una cabeza MLP.",
     "respuesta_en": "The 10 electrode readings at one time instant (a 10 × 1 vector) are reshaped into a 2 × 5 matrix, called \"Matrix signals\". They are then normalized, augmented with random flipping and rotation, and resized to 72 × 72. The transformer splits this matrix into patches, adds position embeddings and a class (CLS) token, and classifies with an MLP head.",
     "evidencia": {
@@ -1014,11 +1019,13 @@
     "evidencia": {
       "moslhi2024": [
         "Summary of the results of the three models for NinaPro DB1",
-        "ST-Nina-RAW 85.97"
+        "85.97",
+        "85.30",
+        "85.92"
       ]
     },
     "seccion": "4.1 \"Training on NinaPro DB1\" (Tabla 8)",
-    "notas": "Sale de la Tabla 8. Ojo: en CapgMyo DB-A el texto dice 74.90% para FFT y la Tabla 9 dice 79.90%; el paper se contradice.",
+    "notas": "Sale de la Tabla 8. Ojo: en CapgMyo DB-A el texto dice 74.90% para FFT y la Tabla 9 dice 79.90%; el paper se contradice. Evidencia de tabla: pie de tabla más valores de una sola celda (no frases que crucen celdas).",
     "split": null
   },
   {
@@ -1246,12 +1253,13 @@
     "evidencia": {
       "zabihi2023": [
         "we add the output of the TNet and FNet class tokens to get the final representation",
-        "TNet 83.39",
-        "FNet 80.72"
+        "The average of gesture recognition accuracy over all subjects using different window size",
+        "83.39",
+        "80.72"
       ]
     },
     "seccion": "Arquitectura (Fig. 1) y Tabla II",
-    "notas": "Los números por rama salen de la Tabla II.",
+    "notas": "Los números por rama salen de la Tabla II. Evidencia de tabla: pie de tabla más valores de una sola celda (no frases que crucen celdas).",
     "split": null
   },
   {
