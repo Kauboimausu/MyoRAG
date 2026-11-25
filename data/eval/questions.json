@@ -25,7 +25,7 @@
     "id": "q02",
     "tipo": "varios_or",
     "origen": "hoja",
-    "estado": "verificada",
+    "estado": "por_verificar",
     "pregunta_es": "¿A qué frecuencia muestrea el brazalete Myo y cuántos electrodos tiene?",
     "pregunta_en": "What sampling rate does the Myo armband use, and how many electrodes does it have?",
     "respuesta_es": "8 sensores sEMG muestreados a 200 Hz de frequencia.",
@@ -33,10 +33,6 @@
     "evidencia": {
       "pizzolato2017": [
         "samples 8 sEMG sensors at a 200 Hz frequency"
-      ],
-      "phinyomark2018b": [
-        "a set of eight dry EMG electrodes",
-        "200 Hz for the Myo armband"
       ],
       "baronalopez2020": [
         "Myo bracelet, which has eight differential electrodes with a sampling frequency of 200 Hz"
@@ -53,7 +49,7 @@
     },
     "evidencia_parcial": {},
     "seccion": "Pizzolato: 2.2.2 \"Double Myo dataset (Ninapro DB5)\"; Phinyomark 2018b: Abstract e Introducción",
-    "notas": "Antes era un_fragmento con 2 papers; agregué los 4 que dicen frecuencia y electrodos en la misma frase. Wei 2021, Xu 2020 y Zhu 2022 solo mencionan los 200 Hz. El texto de chen2020 sale revuelto en pdftotext.",
+    "notas": "Antes era un_fragmento con 2 papers; agregué los 4 que dicen frecuencia y electrodos en la misma frase. Wei 2021, Xu 2020 y Zhu 2022 solo mencionan los 200 Hz. El texto de chen2020 sale revuelto en pdftotext. Revisión con la regla de fragmento completo: se quitó phinyomark2018b: ningún párrafo dice los 200 Hz y los ocho electrodos juntos (están en párrafos distintos de la Introducción).",
     "split": null
   },
   {
@@ -80,7 +76,7 @@
     "id": "q04",
     "tipo": "un_fragmento",
     "origen": "hoja",
-    "estado": "verificada",
+    "estado": "por_verificar",
     "pregunta_es": "¿Cuántos gestos y cuántos canales tiene el sub-dataset de reconocimiento de patrones de Hyser?",
     "pregunta_en": "How many gestures and how many channels does the Hyser pattern recognition sub-dataset have?",
     "respuesta_es": "El sub-dataset de reconocimiento de patrones captura 34 gestos de mano de uso cotidiano con 256 canales HD-sEMG.",
@@ -88,55 +84,50 @@
     "evidencia": {
       "jiang2021": [
         "34 commonly used hand gestures",
-        "34 hand gestures in common daily use",
-        "256-channel HD-sEMG"
+        "34 hand gestures in common daily use"
       ]
     },
     "evidencia_parcial": {},
     "seccion": "Abstract; Introducción (descripción del Dataset 1); II.B \"Data Acquisition\"",
-    "notas": null,
+    "notas": "Revisión con la regla de fragmento completo: se quitó '256-channel HD-sEMG' porque también marca B. Data Acquisition, que da los canales pero no los gestos.",
     "split": null
   },
   {
     "id": "q05",
     "tipo": "un_fragmento",
     "origen": "hoja",
-    "estado": "verificada",
+    "estado": "por_verificar",
     "pregunta_es": "¿Qué sensores además de sEMG se registran en el dataset de Krasoulis (NinaPro DB7)?",
     "pregunta_en": "Besides sEMG, which sensors are recorded in the Krasoulis dataset (NinaPro DB7)?",
     "respuesta_es": "Mediciones inerciales (IM). Cada electrodo del sistema Delsys Trigno IM incluye una IMU de 9 grados de libertad: acelerómetro, giroscopio y magnetómetro triaxiales, que miden aceleración, velocidad angular y campo magnético. El sEMG se muestreó a 2 kHz y los datos inerciales a 128 Hz.",
     "respuesta_en": "Inertial measurements (IM). Each electrode of the Delsys Trigno IM system includes a 9-degree-of-freedom IMU: a triaxial accelerometer, gyroscope and magnetometer, which measure acceleration, angular velocity and magnetic field. sEMG was sampled at 2 kHz and inertial data at 128 Hz.",
     "evidencia": {
       "krasoulis2017": [
-        "tri-axial accelerometer, gyroscope and magnetometer",
-        "2 kHz for myoelectric signals and 128 Hz for IM data"
+        "tri-axial accelerometer, gyroscope and magnetometer"
       ]
     },
     "evidencia_parcial": {},
     "seccion": "Methods, \"Signal acquisition\"",
-    "notas": null,
+    "notas": "Revisión con la regla de fragmento completo: se quitó la frase de frecuencias de muestreo: ese párrafo no dice qué sensores son. Las frecuencias (2 kHz y 128 Hz) están en el párrafo siguiente de 'Signal acquisition'.",
     "split": null
   },
   {
     "id": "q06",
     "tipo": "un_fragmento",
     "origen": "hoja",
-    "estado": "verificada",
+    "estado": "por_verificar",
     "pregunta_es": "¿Cuántos estudios analiza la revisión sistemática de reconocimiento de gestos en tiempo real y con qué metodología los seleccionó?",
     "pregunta_en": "How many studies does the systematic review on real-time gesture recognition analyze, and what methodology did it use to select them?",
     "respuesta_es": "Sigue la metodología de Kitchenham. Primero se consultaron 4 repositorios de literatura (IEEE Xplore, ACM Digital Library, Science Direct y Springer) con 16 cadenas de búsqueda y un rango de fechas del 1 de enero de 2013 al 31 de diciembre de 2019, lo que dio 1485 estudios. Se descartaron 1021 duplicados y se agregaron 23 por snowballing, resultando en 487 estudios. Estos 487 se filtraron analizando título, abstract y conclusiones con los criterios de inclusión y exclusión y las preguntas de evaluación, resultando en 65 estudios analizados.",
     "respuesta_en": "It follows the Kitchenham methodology. Four literature repositories were searched (IEEE Xplore, ACM Digital Library, Science Direct and Springer) with 16 search strings, from 1 January 2013 to 31 December 2019, returning 1485 studies. 1021 duplicates were discarded and 23 studies were added through snowballing, giving 487 studies. These 487 were filtered by title, abstract and conclusions using the inclusion and exclusion criteria and the evaluation questions, leaving 65 analyzed studies.",
     "evidencia": {
       "jaramillo2020": [
-        "We selected and assessed 65 primary studies following the Kitchenham methodology",
-        "We discarded 1021 duplicated primary studies of the 1485 primary studies",
-        "we obtained 487 primary studies in total",
-        "16 search strings"
+        "We selected and assessed 65 primary studies following the Kitchenham methodology"
       ]
     },
     "evidencia_parcial": {},
     "seccion": "Abstract; 2.2 \"Search of Primary Studies\" y 2.3 \"Analysis of Primary Studies\"",
-    "notas": null,
+    "notas": "Revisión con la regla de fragmento completo: solo el abstract da los 65 estudios y la metodología juntos. El proceso (1485, 1021, 23 por snowballing, 487, 16 cadenas) está repartido en la sección 2.2, que GROBID titula 'SS1' porque mezcla la tabla de cadenas de búsqueda.",
     "split": null
   },
   {
@@ -225,20 +216,19 @@
     "id": "q11",
     "tipo": "un_fragmento",
     "origen": "hoja",
-    "estado": "verificada",
+    "estado": "por_verificar",
     "pregunta_es": "¿Qué es ADANN y cuánto mejora la clasificación entre sujetos?",
     "pregunta_en": "What is ADANN and how much does it improve inter-subject classification?",
     "respuesta_es": "Adaptive Domain Adversarial Neural Network: un algoritmo de entrenamiento adversarial de dominio que entrena una sola red sobre varios dominios. Mejora la accuracy de clasificación entre sujetos en 19.40% en promedio frente al entrenamiento estándar (p = 0.00004).",
     "respuesta_en": "Adaptive Domain Adversarial Neural Network: a domain-adversarial training algorithm that trains a single network over several domains. It improves inter-subject classification accuracy by 19.40% on average compared with standard training (p = 0.00004).",
     "evidencia": {
       "coteallard2020a": [
-        "Adaptive Domain Adversarial Neural Network",
         "inter-subject classification accuracy by an average of 19.40%"
       ]
     },
     "evidencia_parcial": {},
     "seccion": "Abstract; el algoritmo se describe en la sección 2.3.2",
-    "notas": null,
+    "notas": "Revisión con la regla de fragmento completo: se quitó 'Adaptive Domain Adversarial Neural Network' porque también marca la Introducción, que explica ADANN sin el 19.40%.",
     "split": null
   },
   {
@@ -266,7 +256,7 @@
     "id": "q13",
     "tipo": "varios_and",
     "origen": "hoja",
-    "estado": "verificada",
+    "estado": "por_verificar",
     "pregunta_es": "¿Qué datasets públicos de HD-sEMG existen y cuántos canales tiene cada uno?",
     "pregunta_en": "Which public HD-sEMG datasets exist, and how many channels does each one have?",
     "respuesta_es": "CapgMyo (Du 2017): 128 canales en una matriz de 8×16, 23 sujetos. Hyser (Jiang 2021): 256 canales en cuatro arreglos de 8×8, 20 sujetos. Malešević 2021: 128 canales en dos rejillas de 8×8 (64 contactos cada una), 20 participantes y 65 gestos. CSL-HDEMG: 192 canales (lo citan Du 2017 y la Tabla 1 de putEMG; el paper referenciado no está en el corpus). putEMG no entra como HD-sEMG: utiliza 24 electródos en bandas de 8, y en su propio paper clasifica arreglos de 128 a 196 electrodos como alta densidad",
@@ -283,22 +273,20 @@
         "recorded using 128 channels within two electrode grids positioned on the forearms of 20 able-bodied volunteers"
       ],
       "kaczmarek2019": [
-        "recordings of 24 sEMG channels",
-        "two main measurement methods: High-Density sEMG 128-196 electrode arrays",
         "CSL-HDEMG",
         "192 HD-sEMG"
       ]
     },
     "evidencia_parcial": {},
     "seccion": "Abstract e introducción de cada paper; Tabla 1 de putEMG",
-    "notas": "Era la pregunta 14 de la hoja. Los 192 canales de CSL-HDEMG solo aparecen en la Tabla 1 de putEMG: sirve para medir si las tablas sobreviven al parseo, también menciona número de sujetos y gestos pero se tienen que referenciar celdas sin texto distintivo",
+    "notas": "Era la pregunta 14 de la hoja. Los 192 canales de CSL-HDEMG solo aparecen en la Tabla 1 de putEMG: sirve para medir si las tablas sobreviven al parseo, también menciona número de sujetos y gestos pero se tienen que referenciar celdas sin texto distintivo Revisión con la regla de fragmento completo: en putEMG solo se deja la Tabla 1 (CSL-HDEMG, 192 canales). Los 24 canales de putEMG (abstract) y el rango de 128 a 196 electrodos para alta densidad (Introducción) están en otros párrafos.",
     "split": null
   },
   {
     "id": "q14",
     "tipo": "varios_and",
     "origen": "hoja",
-    "estado": "verificada",
+    "estado": "por_verificar",
     "pregunta_es": "¿Qué métodos se han propuesto para tolerar el desplazamiento de electrodos?",
     "pregunta_en": "Which methods have been proposed to tolerate electrode shift?",
     "respuesta_es": "Tres métodos y un dataset. (1) Lin, Wang y Dai 2024 (Front. Neurosci. 18:1306047): attention-DFCNN, que combina rasgos espaciales y temporales de HD-sEMG; con desplazamiento de 10 mm logra 94.16 ± 3.91% promedio en siete sujetos intactos y 57.08 ± 2.96% en un sujeto amputado. (2) Xu 2020 (Sensors 20:1113): detección y corrección rápida del desplazamiento con ángulo arbitrario, usando un gesto de sincronización y la ubicación interpolada del pico; sin la corrección la accuracy cae de 94.7% a 51.4%. (3) Barona López 2020: corrección de orientación basada en energía; con un gesto de sincronización encuentra el canal de máxima energía y reordena los canales a partir de él; la clasificación sube de 44.5% a 81.2% en modelos generales y de 39.8% a 94.9% en modelos por usuario. (4) SeNic 2022 no propone un método, sino un dataset: 8 canales de sEMG, y desplazamientos de electrodos medidos con una regla anular impresa en 3D, con 36 sujetos y 7 gesto bajo condiciones no ideales.",
@@ -306,15 +294,10 @@
     "evidencia": {
       "lin2024a": [
         "an attention deep fast convolutional neural network (attention-DFCNN) model",
-        "improve the robustness and stability by combining the spatial and temporary features",
-        "experimental results for seven able-bodied subjects with the electrodes shift 10 mm",
-        "average accuracy of 94.16%",
-        "results for the amputee subject",
-        "overall accuracy of the proposed model (57.08%"
+        "improve the robustness and stability by combining the spatial and temporary features"
       ],
       "xu2020": [
-        "combining interpolated peak location and preset synchronous gesture, the developed simplified rapid electrode shift detection and correction at random",
-        "fall from 94.7% to 51.4%"
+        "combining interpolated peak location and preset synchronous gesture, the developed simplified rapid electrode shift detection and correction at random"
       ],
       "baronalopez2020": [
         "computation of the maximum energy channel using a synchronization gesture",
@@ -325,13 +308,12 @@
       "zhu2022": [
         "consists of 8-channel sEMG signals",
         "36 subjects participate in our data acquisition experiments of 7 gestures",
-        "non-ideal conditions",
         "electrode shifts from an 3D-printed annular ruler"
       ]
     },
     "evidencia_parcial": {},
     "seccion": "Abstract de cada paper; sección 3.1 de Lin 2024; resultados (Tabla 2) de Xu 2020",
-    "notas": "Era la pregunta 15 de la hoja. El 94.7% → 51.4% de Xu también está en el texto, no solo en la Tabla 2.",
+    "notas": "Era la pregunta 15 de la hoja. El 94.7% → 51.4% de Xu también está en el texto, no solo en la Tabla 2. Revisión con la regla de fragmento completo: por paper se marca el párrafo que dice cuál es el método. Las cifras están en otros párrafos: Lin 2024a, 94.16% en sujetos sin amputación y 57.08% en el amputado, en párrafos separados de 3.1 (el abstract del TEI da 0.942 y no menciona al amputado); Xu 2020, la caída de 94.7% a 51.4%, en 3.2. Se quitó 'non-ideal conditions' de zhu2022 por genérica (marcaba 10 párrafos).",
     "split": null
   },
   {
@@ -461,7 +443,7 @@
     "id": "q21",
     "tipo": "un_fragmento",
     "origen": "claude",
-    "estado": "por_verificar",
+    "estado": "verificada",
     "pregunta_es": "¿Cuántas personas, gestos y orientaciones del antebrazo incluye el dataset FORS-EMG, y cuántos electrodos usa?",
     "pregunta_en": "How many people, gestures and forearm orientations does the FORS-EMG dataset include, and how many electrodes does it use?",
     "respuesta_es": "19 sujetos sin amputación hicieron 12 gestos de mano en tres orientaciones del antebrazo: supinación, reposo y pronación. Se usaron 8 electrodos EMG MFI, colocados en el codo y a media altura del antebrazo.",
@@ -481,7 +463,7 @@
     "id": "q22",
     "tipo": "un_fragmento",
     "origen": "claude",
-    "estado": "por_verificar",
+    "estado": "verificada",
     "pregunta_es": "Además del sEMG, ¿qué otras señales registra el dataset MeganePro y de cuántas personas?",
     "pregunta_en": "Besides sEMG, what other signals does the MeganePro dataset record, and from how many people?",
     "respuesta_es": "Acelerometría del antebrazo, y mirada (eye tracking), video en primera persona y mediciones inerciales de la cabeza. Se registró a 15 personas con amputación transradial y 30 sin amputación mientras hacían tareas de agarre.",
@@ -501,7 +483,7 @@
     "id": "q23",
     "tipo": "un_fragmento",
     "origen": "claude",
-    "estado": "por_verificar",
+    "estado": "verificada",
     "pregunta_es": "¿Cuántos canales, participantes y gestos tiene el dataset de sEMG de Ozdemir et al. (2022), y con qué equipo se registró?",
     "pregunta_en": "How many channels, participants and gestures does the sEMG dataset by Ozdemir et al. (2022) have, and what device was used to record it?",
     "respuesta_es": "4 canales de sEMG de 4 músculos del antebrazo, 40 participantes (mitad mujeres y mitad hombres) y 10 gestos de mano. Se registró con un BIOPAC MP36 y electrodos bipolares de superficie de Ag/AgCl. Cada participante hizo cinco ciclos de los diez gestos.",
@@ -515,14 +497,14 @@
     },
     "evidencia_parcial": {},
     "seccion": "Abstract",
-    "notas": null,
+    "notas": "GROBID no reconoce bien el header de ozdemir2022: el título sale como 'Data in Brief' y el abstract queda en el body como sección 'a b s t r a c t'. La evidencia sí aparece en el TEI; revisar al escribir el convertidor.",
     "split": null
   },
   {
     "id": "q24",
     "tipo": "un_fragmento",
     "origen": "claude",
-    "estado": "por_verificar",
+    "estado": "verificada",
     "pregunta_es": "Según Lobov et al., ¿por qué una interfaz de sEMG funciona mejor con unas personas que con otras, y sirve entrenar un rato antes de usarla?",
     "pregunta_en": "According to Lobov et al., why does an sEMG interface work better for some people than for others, and does a short training session before using it help?",
     "respuesta_es": "En las pruebas sintéticas, los factores decisivos son el grado de cooperación entre músculos y la cantidad de tejido graso del cuerpo, y solo se ajustan con entrenamiento de largo plazo. El entrenamiento corto no cambia los resultados de las pruebas sintéticas, pero sí sube de forma significativa la puntuación en el videojuego, lo que sugiere que actúa a un nivel más alto, de toma de decisiones.",
@@ -542,7 +524,7 @@
     "id": "q25",
     "tipo": "un_fragmento",
     "origen": "claude",
-    "estado": "por_verificar",
+    "estado": "verificada",
     "pregunta_es": "¿Cómo representan Olsson et al. los movimientos complejos de la mano para clasificarlos con HD-sEMG, y qué tan bien funciona?",
     "pregunta_en": "How do Olsson et al. represent complex hand movements in order to classify them from HD-sEMG, and how well does it work?",
     "respuesta_es": "Usan clasificación multi-etiqueta: un movimiento complejo se expresa como la superposición de movimientos más simples, con 16 etiquetas independientes para los principales grados de libertad de la mano y el antebrazo. Una CNN entrenada con secuencias de imágenes de sEMG de 16 × 8 y 24 muestras, a 2048 Hz, logra una tasa media de coincidencia exacta de 78.7% y una pérdida de Hamming media de 2.9% en 14 sujetos sanos de prueba.",
@@ -555,14 +537,14 @@
     },
     "evidencia_parcial": {},
     "seccion": "Abstract",
-    "notas": null,
+    "notas": "GROBID no reconoce el header de olsson2019: título y autores vacíos, y el abstract queda como pie de la figura 1 (figure fig_0 / figDesc). La evidencia sí aparece en el TEI, pero no en el abstract; revisar al escribir el convertidor.",
     "split": null
   },
   {
     "id": "q26",
     "tipo": "un_fragmento",
     "origen": "claude",
-    "estado": "por_verificar",
+    "estado": "verificada",
     "pregunta_es": "¿Qué accuracy logra FS-HGR cuando solo ve unos pocos ejemplos de repeticiones, personas o gestos nuevos?",
     "pregunta_en": "What accuracy does FS-HGR achieve when it only sees a few examples of new repetitions, new people or new gestures?",
     "respuesta_es": "Con observación few-shot 5-way 5-shot: 85.94% en repeticiones nuevas, 81.29% en sujetos nuevos y 73.36% en gestos nuevos. FS-HGR es un marco de few-shot learning basado en meta-aprendizaje.",
@@ -586,25 +568,24 @@
     "estado": "por_verificar",
     "pregunta_es": "¿Qué tan rápido, con cuánta energía y con cuánta memoria corre el mejor Bioformer en un microcontrolador?",
     "pregunta_en": "How fast, with how much energy and with how much memory does the best Bioformer run on a microcontroller?",
-    "respuesta_es": "En el microcontrolador de ultra bajo consumo GreenWaves GAP8 (PULP), el mejor Bioformer tiene una latencia de inferencia de 2.72 ms y gasta 0.14 mJ, 8.0× menos que la red previa del estado del arte, y ocupa 94.2 kB de memoria. Los Bioformers reducen 4.9× los parámetros y las operaciones, y un pre-entrenamiento entre sujetos mejora en 3.39% la accuracy del mejor modelo.",
-    "respuesta_en": "On the GreenWaves GAP8 ultra-low-power (PULP) microcontroller, the best Bioformer has an inference latency of 2.72 ms and an energy of 0.14 mJ, 8.0× lower than the previous state-of-the-art network, while occupying 94.2 kB of memory. Bioformers reduce parameters and operations by 4.9×, and an inter-subject pre-training improves the best model's accuracy by 3.39%.",
+    "respuesta_es": "En el microcontrolador paralelo de ultra bajo consumo GreenWaves GAP8 (PULP), el mejor Bioformer tiene una latencia de inferencia de 2.72 ms y gasta 0.14 mJ, 8.0×  menos que la red previa del estado del arte, y ocupa 94.2 kB de memoria. Los Bioformers reducen 4.9× los parámetros y las operaciones, y un pre-entrenamiento entre sujetos mejora en 3.39% la accuracy del mejor modelo.",
+    "respuesta_en": "On the GreenWaves GAP8 parallel, ultra-low-power (PULP) microcontroller, the best Bioformer has an inference latency of 2.72 ms and an energy of 0.14 mJ, 8.0× lower than the previous state-of-the-art network, while occupying 94.2 kB of memory. Bioformers reduce parameters and operations by 4.9×, and an inter-subject pre-training improves the best model's accuracy by 3.39%.",
     "evidencia": {
       "burrello2022": [
         "we achieve an inference latency and energy of 2.72 ms and 0.14 mJ",
-        "while occupying just 94.2 kB of memory",
-        "we improve the accuracy of our best Bioformer by 3.39%"
+        "while occupying just 94.2 kB of memory"
       ]
     },
     "evidencia_parcial": {},
     "seccion": "Abstract",
-    "notas": null,
+    "notas": "Revisión con la regla de fragmento completo: se quitó el 3.39% del pre-entrenamiento: no es lo que se pregunta y GROBID lo deja en otro párrafo del abstract.",
     "split": null
   },
   {
     "id": "q28",
     "tipo": "un_fragmento",
     "origen": "claude",
-    "estado": "por_verificar",
+    "estado": "verificada",
     "pregunta_es": "¿Qué tan bien reconoce gestos el agente de aprendizaje por refuerzo de Vásconez et al. usando el brazalete Myo?",
     "pregunta_en": "How well does the reinforcement learning agent by Vásconez et al. recognize gestures with the Myo armband?",
     "respuesta_es": "El agente usa un deep Q-network (DQN) con EMG e IMU para once gestos (cinco estáticos y seis dinámicos), con modelos por usuario. Con el Myo llega a 97.50% ± 1.13% de clasificación y 88.15% ± 2.84% de reconocimiento en gestos estáticos, y a 98.95% ± 0.62% y 90.47% ± 4.57% en gestos dinámicos.",
@@ -612,7 +593,8 @@
     "evidencia": {
       "vasconez2022": [
         "eleven hand gestures",
-        "able to reach up to 97.50%"
+        "able to reach up to 97.50%",
+        "with regard to dynamic gestures"
       ]
     },
     "evidencia_parcial": {},
@@ -631,13 +613,13 @@
     "respuesta_en": "With the PCMIRR algorithm (Pearson Correlation and Motion Intention Recognition Rate), which combines the Pearson correlation between the amputee's sEMG channels with the recognition rate of each single channel. When the number of electrodes is optimized to 8, accuracy reaches 94.50%, versus 93.82% for the Improved DenseNet with all channels.",
     "evidencia": {
       "niu2024": [
-        "Pearson Correlation and Motion Intention Recognition Rate",
-        "When the number of electrodes was optimized to 8, the recognition accuracy reached 94.50%"
+        "When the number of electrodes was optimized to 8, the recognition accuracy reached 94.50%",
+        "the Improved DenseNet model achieved the highest accuracy of 94.50%"
       ]
     },
     "evidencia_parcial": {},
     "seccion": "Abstract; 2.4 \"PCMIRR-based channel number optimization algorithm\"",
-    "notas": "Niu 2024 es CC BY-NC.",
+    "notas": "Niu 2024 es CC BY-NC. Revisión con la regla de fragmento completo: solo el abstract y las Conclusiones tienen método y resultado juntos. También está repartida: método en 2.4 y resultado en 3.2.4. Se quitó 'Pearson Correlation and…' porque marcaba la viñeta de la Introducción, que no da el resultado.",
     "split": null
   },
   {
@@ -771,13 +753,13 @@
     "respuesta_en": "With 200 ms sliding windows: 88.4%, 85.8%, 68.2%, 72.9% and 90.3% intra-subject, and 84.9%, 82.0%, 65.6%, 70.2% and 88.9% inter-subject, on DB1 to DB5 respectively. HVPN (hierarchical view pooling network) is a multiview deep learning framework that learns both view-specific and view-shared features.",
     "evidencia": {
       "wei2021": [
-        "the intrasubject gesture recognition accuracy of 88.4%, 85.8%, 68.2%, 72.9%, and 90.3%",
-        "the intersubject gesture recognition accuracy of 84.9%, 82.0%, 65.6%, 70.2%, and 88.9%"
+        "the intersubject gesture recognition accuracy of 84.9%, 82.0%, 65.6%, 70.2%, and 88.9%",
+        "LOSOCV accuracy achieved on NinaPro DB1, DB2, DB3, DB4, and DB5 using 200 ms sliding windows"
       ]
     },
     "evidencia_parcial": {},
     "seccion": "Abstract",
-    "notas": null,
+    "notas": "Revisión con la regla de fragmento completo: se marca el abstract y las Conclusiones (ambas cifras). La frase de la accuracy dentro de cada sujeto también marcaba 4.2, que no da la de entre sujetos. GROBID pierde la ligadura 'Th' en este paper ('e LOSOCV', 'is paper').",
     "split": null
   },
   {
@@ -791,14 +773,12 @@
     "respuesta_en": "SCADANN (Self-Calibrating Asynchronous Domain Adversarial Neural Network) has three steps: (1) it applies DANN to the network using the labeled data and the newly acquired unlabeled data; (2) using the adapted network, it relabels the new data with a pseudo-labeling scheme that distinguishes stable and unstable prediction states; (3) starting from the adapted network, it trains with the pseudo-labeled and labeled data while continuing to apply DANN to minimize domain divergence. It was evaluated on an offline and a dynamic dataset (20 participants each) and obtained the highest average accuracy in all tested cases.",
     "evidencia": {
       "coteallard2020b": [
-        "which can be divided into three steps",
-        "Apply DANN to the network using the labeled and newly acquired unlabeled data",
-        "20 participants per dataset"
+        "Apply DANN to the network using the labeled and newly acquired unlabeled data"
       ]
     },
     "evidencia_parcial": {},
     "seccion": "Abstract; Section V (SCADANN)",
-    "notas": "Pareja natural de q12 (Zhai 2017): SCADANN se compara contra ese esquema de voto mayoritario.",
+    "notas": "Pareja natural de q12 (Zhai 2017): SCADANN se compara contra ese esquema de voto mayoritario. Revisión con la regla de fragmento completo: solo el párrafo con la lista de pasos responde. GROBID separa la frase 'which can be divided into three steps:' en su propio párrafo, y el abstract (20 participantes) no explica los pasos.",
     "split": null
   },
   {
@@ -930,21 +910,18 @@
     "respuesta_en": "Three papers from Chuang Lin's group. (1) Lin & He 2024: RoFormer (a transformer with rotary position embedding), a cross-subject model adapted to new subjects with adversarial transfer learning (ATL); with ATL it reaches an average CC of 0.841 (0.776 with fine-tuning). (2) Lin & Zhang 2024: FIT, which fuses Inception and transformer networks; average PCC of 0.87 ± 0.02 on six grasps, predicting 10 hand joint angles. (3) Lin & Zhou 2025: a parallel network of a CNN with multi-head attention and a BiLSTM; average PCC of 0.87 ± 0.02 on six finger movements, better than BiLSTM (0.79), CNN-Attention (0.80), CNN (0.70), CNN-BiLSTM (0.83) and TCN (0.76).",
     "evidencia": {
       "lin2024b": [
-        "average CC, NMRSE, and R2 were 0.841",
-        "We conducted experiments on 10 randomly selected subjects from the NinaproDB2 dataset"
+        "average CC, NMRSE, and R2 were 0.841"
       ],
       "lin2024c": [
-        "The FIT demonstrated average PCC, NRMSE, and R2 of (0.87",
-        "six typical hand grasping maneuvers in 10 subjects"
+        "The FIT demonstrated average PCC, NRMSE, and R2 of (0.87"
       ],
       "lin2025": [
-        "the average accuracy (PCC) of the proposed network reaches 0.87",
-        "Six finger movements of 10 subjects were tested in the Ninapro DB2 dataset"
+        "the average accuracy (PCC) of the proposed network reaches 0.87"
       ]
     },
     "evidencia_parcial": {},
     "seccion": null,
-    "notas": "Los tres comparten primer autor y casi el mismo protocolo: es una buena prueba de si el sistema confunde papers parecidos.",
+    "notas": "Los tres comparten primer autor y casi el mismo protocolo: es una buena prueba de si el sistema confunde papers parecidos. Revisión con la regla de fragmento completo: por paper se marca el párrafo con el modelo y la correlación. Se quitaron las frases que marcaban abstracts o introducciones sin números (lin2024b, lin2024c y la Introducción de lin2025).",
     "split": null
   },
   {
@@ -986,13 +963,12 @@
         "38.09"
       ],
       "niu2024": [
-        "were 93.82%, 93.61%, and 93.65%",
-        "utilizing the sEMG data from 17 motions performed by 8 transradial amputees"
+        "were 93.82%, 93.61%, and 93.65%"
       ]
     },
     "evidencia_parcial": {},
     "seccion": null,
-    "notas": "La trampa es la comparabilidad: una buena respuesta debe decir que los protocolos son distintos.",
+    "notas": "La trampa es la comparabilidad: una buena respuesta debe decir que los protocolos son distintos. Revisión con la regla de fragmento completo: se quitó la frase '17 motions… 8 amputees' porque marca la Introducción, que no da la accuracy. Ese dato (clave para la comparabilidad) está ahí y en 2.1.",
     "split": null
   },
   {
@@ -1070,20 +1046,19 @@
     "id": "q49",
     "tipo": "un_fragmento",
     "origen": "claude",
-    "estado": "verificada",
+    "estado": "por_verificar",
     "pregunta_es": "En el Signal Transformer de Moslhi, ¿cómo se convierten las lecturas de los electrodos en una entrada tipo imagen?",
     "pregunta_en": "In the Signal Transformer by Moslhi, how are the electrode readings turned into an image-like input?",
     "respuesta_es": "Las 10 lecturas de los electrodos en un instante (un vector de 10 × 1) se reacomodan en una matriz de 2 × 5, que llaman \"Matrix signals\". Después se normalizan, se aumentan con volteos y rotaciones aleatorias y se redimensionan a 72 × 72. El transformer divide esa matriz en parches, les suma embeddings de posición y un token de clase (CLS), y clasifica con una cabeza MLP.",
     "respuesta_en": "The 10 electrode readings at one time instant (a 10 × 1 vector) are reshaped into a 2 × 5 matrix, called \"Matrix signals\". They are then normalized, augmented with random flipping and rotation, and resized to 72 × 72. The transformer splits this matrix into patches, adds position embeddings and a class (CLS) token, and classifies with an MLP head.",
     "evidencia": {
       "moslhi2024": [
-        "This matrix is aptly referred to as",
-        "Each matrix signal was resized to 72"
+        "reshaping the 10 electrode readings from a 1D vector"
       ]
     },
     "evidencia_parcial": {},
     "seccion": "3.5 \"Classification using ST\"",
-    "notas": null,
+    "notas": "Revisión con la regla de fragmento completo: se marca el párrafo que explica el reacomodo de 10 lecturas en una matriz de 2 × 5. El nombre 'Matrix signals' y el resize a 72 × 72 están en los dos párrafos siguientes de 3.5.",
     "split": null
   },
   {
@@ -1119,13 +1094,12 @@
     "respuesta_en": "Six stages: data acquisition, data preprocessing, feature extraction, pattern classification, post-processing and performance evaluation. Preprocessing usually has three steps: smoothing, normalization and segmentation.",
     "evidencia": {
       "li2021": [
-        "which are data acquisition, data preprocessing, feature extraction, classification of patterns, post-processing, and performance evaluation",
-        "smoothing, normalization, segmentation"
+        "which are data acquisition, data preprocessing, feature extraction, classification of patterns, post-processing, and performance evaluation"
       ]
     },
     "evidencia_parcial": {},
     "seccion": "2 \"Pattern recognition-based sEMG\"",
-    "notas": null,
+    "notas": "Revisión con la regla de fragmento completo: se quitó la frase de los pasos del preprocesamiento: ese párrafo (2.2) no da las seis etapas.",
     "split": null
   },
   {
@@ -1159,14 +1133,14 @@
     "respuesta_en": "A taxonomy with two axes instead of \"classical machine learning versus deep learning\". (1) By feature extraction approach: spatially agnostic (the same temporal features on every channel; the most common and interpretable), spatially specific (different features per channel) and spatiotemporal (spatial and temporal features together, as in most deep learning models; the least interpretable). (2) By decision boundary: linear (simpler and less prone to overfitting) or non-linear (separates complex data, but overfits more under distribution shift).",
     "evidencia": {
       "le2025": [
-        "Spatially Agnostic Feature Extraction",
-        "this configuration is the least interpretable",
-        "into linear and non-linear types"
+        "we propose a new taxonomy for categorizing machine learning models based on feature extraction methods and decision boundary strategies",
+        "based on feature extraction methods and decision boundaries",
+        "based on feature extraction approach and decision boundaries"
       ]
     },
     "evidencia_parcial": {},
     "seccion": "2.3 \"Taxonomies for categorizing myoelectric hand gesture recognition models\"",
-    "notas": null,
+    "notas": "Revisión con la regla de fragmento completo: se marcan los párrafos que presentan la taxonomía completa: abstract, viñeta de la Introducción y 2.3. Las categorías están repartidas en 2.3.1 (una viñeta por categoría) y 2.3.2. Como lo esencial está en el abstract, ya no es una pregunta solo de cuerpo.",
     "split": null
   },
   {
@@ -1180,13 +1154,12 @@
     "respuesta_en": "It is called C-B1PB2 and has two parallel convolutional blocks. Block 1 uses 1 × 13 filters with max pooling; Block 2 uses larger 1 × 57 kernels without pooling. The outputs are concatenated and fed to a classifier with three fully connected layers (520, 260 and 130 units) and a 17-unit softmax, one per gesture. The input is 12 × 200 sEMG images: 12 electrodes and 100 ms windows.",
     "evidencia": {
       "ding2018": [
-        "Convolution with two Parallel Block (C-B1PB2)",
-        "The pooling layers were not adopted in Block 2"
+        "the Block 2 is different in first three convolution layers which adopt the bigger filter kernel size"
       ]
     },
     "evidencia_parcial": {},
     "seccion": "2.2.2 \"Feature Extraction and Classification\"",
-    "notas": "El texto de este PDF sale duplicado y encimado en pdftotext; revisa cómo lo deja GROBID.",
+    "notas": "El texto de este PDF sale duplicado y encimado en pdftotext; revisa cómo lo deja GROBID. Revisión con la regla de fragmento completo: respuesta repartida: el nombre C-B1PB2, el bloque 1, el clasificador y la entrada de 12 × 200 están en párrafos distintos de 2.2.1 y 2.2.2. Se marca el párrafo del bloque 2, que da la idea multi-escala. GROBID duplica párrafos de este paper (texto encimado 'FOR PEER REVIEW').",
     "split": null
   },
   {
@@ -1302,13 +1275,12 @@
     "evidencia": {
       "krasoulis2017": [
         "The length of the shifting window was set to 256 ms and the increment to 50 ms",
-        "the average delay was 170 ms",
-        "we employed a linear discriminant analysis (LDA) classifier"
+        "the average delay was 170 ms"
       ]
     },
     "evidencia_parcial": {},
     "seccion": "Methods, \"Signal preprocessing and classifier training\"",
-    "notas": null,
+    "notas": "Revisión con la regla de fragmento completo: se marca el párrafo con features, ventana y retraso. El clasificador (LDA) está en el párrafo siguiente.",
     "split": null
   },
   {
@@ -1323,13 +1295,12 @@
     "evidencia": {
       "du2017": [
         "DB-b contains the same gesture set as in DB-a but was obtained from 10 of the 23 subjects",
-        "Whereas DB-a was intended to fine-tune hyper-parameters of the recognition model",
         "DB-c contains 12 basic movements of the fingers"
       ]
     },
     "evidencia_parcial": {},
     "seccion": "2.1.3 (descripción de las sub-bases)",
-    "notas": null,
+    "notas": "Revisión con la regla de fragmento completo: se marca el párrafo que describe las tres sub-bases. Para qué se usa cada una está en el párrafo siguiente de 2.1.3.",
     "split": null
   },
   {
@@ -1343,7 +1314,6 @@
     "respuesta_en": "TraHGR has two parallel paths: TNet, which splits the sEMG window into temporal patches, and FNet, which uses featural patches. It adds the class tokens of both for the final prediction and trains with the sum of three losses (TNet, FNet and TraHGR). On full DB2 (49 gestures) with 200 ms windows, TNet alone reaches 83.39%, FNet alone 80.72%, and the combined TraHGR-Huge 86.18%.",
     "evidencia": {
       "zabihi2023": [
-        "we add the output of the TNet and FNet class tokens to get the final representation",
         "The average of gesture recognition accuracy over all subjects using different window size",
         "83.39",
         "80.72"
@@ -1351,7 +1321,7 @@
     },
     "evidencia_parcial": {},
     "seccion": "Arquitectura (Fig. 1) y Tabla II",
-    "notas": "Los números por rama salen de la Tabla II. Evidencia de tabla: pie de tabla más valores de una sola celda (no frases que crucen celdas).",
+    "notas": "Los números por rama salen de la Tabla II. Evidencia de tabla: pie de tabla más valores de una sola celda (no frases que crucen celdas). Revisión con la regla de fragmento completo: se marca la Tabla II (accuracy por rama). Cómo se combinan las ramas está en el pie de la Figura 1. GROBID mete la Tabla II dentro de un párrafo de la sección 'C. TraHGR's Output'.",
     "split": null
   },
   {
@@ -1366,13 +1336,12 @@
     "evidencia": {
       "coteallard2020a": [
         "featuring 22 able-bodied participants performing ten hand/wrist gestures",
-        "the data from each participant was segmented into 151 ms frames with an overlap of 100 ms",
         "a wireless, 10-channel, dry-electrode, 3D printed sEMG armband"
       ]
     },
     "evidencia_parcial": {},
     "seccion": "2.1 \"EMG Data\"",
-    "notas": null,
+    "notas": "Revisión con la regla de fragmento completo: se marca el párrafo con dataset y brazalete. La segmentación (151 ms, 100 ms de traslape) está en el párrafo siguiente de 2.1.",
     "split": null
   },
   {
@@ -1406,13 +1375,12 @@
     "respuesta_en": "Four: (1) static forearm orientation, (2) static limb position, (3) dynamic 2D space, with transitions between elbow and wrist angles, and (4) dynamic 3D space, with shoulder, elbow and wrist transitions, such as reach-to-grasp or activities of daily living. The most common is the static limb position protocol: half of the surveyed experiments, with an average of 8 positions and a maximum of 91.",
     "evidencia": {
       "campbell2020": [
-        "(1) the static forearm orientation protocol, (2) the static limb position protocol",
-        "Among the articles surveyed, these make up 50% of all experiments"
+        "(1) the static forearm orientation protocol, (2) the static limb position protocol"
       ]
     },
     "evidencia_parcial": {},
     "seccion": "3.3 \"Experimental Protocols\"",
-    "notas": null,
+    "notas": "Revisión con la regla de fragmento completo: se marca el párrafo con los cuatro protocolos. Que el más común es el de posición estática (50%) está en 3.3.2.",
     "split": null
   },
   {
@@ -1447,13 +1415,12 @@
     "evidencia": {
       "pizzolato2017": [
         "the spectrum is limited between 0 Hz and 100 Hz due to the sampling frequency of the device",
-        "the amplitude of the Myo signal is limited between -128 and 127",
         "the frequency drops at 50 Hz, highlighting the presence of the notch filter"
       ]
     },
     "evidencia_parcial": {},
     "seccion": "3.1 \"Signal spectrum\"",
-    "notas": "Complementa q02 (Myo a 200 Hz con 8 electrodos) sin repetirla.",
+    "notas": "Complementa q02 (Myo a 200 Hz con 8 electrodos) sin repetirla. Revisión con la regla de fragmento completo: se marca el párrafo del espectro del Myo. La amplitud limitada entre -128 y 127 está en el párrafo anterior.",
     "split": null
   },
   {
@@ -1468,13 +1435,12 @@
     "evidencia": {
       "burrello2022": [
         "First, we train the network for 100 epochs with data coming from patients 2-10",
-        "using sessions 1-5 for training and 6-10 for testing",
-        "14 Delsys Trigno sEMG Wireless electrodes"
+        "using sessions 1-5 for training and 6-10 for testing"
       ]
     },
     "evidencia_parcial": {},
     "seccion": "III \"Material and Methods\" (B y C)",
-    "notas": null,
+    "notas": "Revisión con la regla de fragmento completo: se marca el párrafo del entrenamiento, que también nombra NinaPro DB6. Los detalles del dataset (14 electrodos, 2 kHz, ventanas) están en la sección C.",
     "split": null
   },
   {
