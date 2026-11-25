@@ -16,6 +16,7 @@
         "67 intact subjects, 11 trans-radial amputated subjects"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Ninapro 1 has 27 non-amputees. Ninapro 2 has 40 non-amputees. Ninapro 3 has 11 subjects with transradial amputations. In total the first 3 Ninapro datasets have 67 non-amputees and 11 amputees.",
     "notas": null,
     "split": null
@@ -50,6 +51,7 @@
         "sensor with 8 channels at a sampling rate of 200 Hz"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Pizzolato: 2.2.2 \"Double Myo dataset (Ninapro DB5)\"; Phinyomark 2018b: Abstract e Introducción",
     "notas": "Antes era un_fragmento con 2 papers; agregué los 4 que dicen frecuencia y electrodos en la misma frase. Wei 2021, Xu 2020 y Zhu 2022 solo mencionan los 200 Hz. El texto de chen2020 sale revuelto en pdftotext.",
     "split": null
@@ -69,6 +71,7 @@
         "Days 1, 8, and 29"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract; Methods, \"Subjects and ethical requirements\"",
     "notas": null,
     "split": null
@@ -89,6 +92,7 @@
         "256-channel HD-sEMG"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract; Introducción (descripción del Dataset 1); II.B \"Data Acquisition\"",
     "notas": null,
     "split": null
@@ -108,6 +112,7 @@
         "2 kHz for myoelectric signals and 128 Hz for IM data"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Methods, \"Signal acquisition\"",
     "notas": null,
     "split": null
@@ -129,6 +134,7 @@
         "16 search strings"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract; 2.2 \"Search of Primary Studies\" y 2.3 \"Analysis of Primary Studies\"",
     "notas": null,
     "split": null
@@ -148,6 +154,7 @@
         "must be kept below 300 ms"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "3.3.1 \"Controller Delay of the HGR Models\"; también en la Introducción y en Conclusions",
     "notas": null,
     "split": null
@@ -168,6 +175,7 @@
         "grayscale image by linearly transforming the values of sEMG signals"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Results (descripción del preprocesamiento) y Methods",
     "notas": "En este PDF hay espacios de ancho cero después de × y −: normaliza el texto antes de comparar.",
     "split": null
@@ -188,6 +196,7 @@
         "obtained an average classification accuracy of 75.32"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Results (párrafos finales, junto a la Figura 2); se resume de nuevo en Discussion",
     "notas": "niu2024 cita el 66.59% de Atzori; como la evidencia va por paper, ese fragmento no cuenta como relevante.",
     "split": null
@@ -207,6 +216,7 @@
         "new set of nine time domain features (TD9)"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Results (selección de features con SFS) y Discussion",
     "notas": null,
     "split": null
@@ -226,6 +236,7 @@
         "inter-subject classification accuracy by an average of 19.40%"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract; el algoritmo se describe en la sección 2.3.2",
     "notas": null,
     "split": null
@@ -246,6 +257,7 @@
         "the first set of the six repetitions of movements in DB2 and DB3 was selected as the initial training set"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Materials and Methods, \"Self-Recalibration\"",
     "notas": null,
     "split": null
@@ -277,6 +289,7 @@
         "192 HD-sEMG"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract e introducción de cada paper; Tabla 1 de putEMG",
     "notas": "Era la pregunta 14 de la hoja. Los 192 canales de CSL-HDEMG solo aparecen en la Tabla 1 de putEMG: sirve para medir si las tablas sobreviven al parseo, también menciona número de sujetos y gestos pero se tienen que referenciar celdas sin texto distintivo",
     "split": null
@@ -285,7 +298,7 @@
     "id": "q14",
     "tipo": "varios_and",
     "origen": "hoja",
-    "estado": "validado",
+    "estado": "verificada",
     "pregunta_es": "¿Qué métodos se han propuesto para tolerar el desplazamiento de electrodos?",
     "pregunta_en": "Which methods have been proposed to tolerate electrode shift?",
     "respuesta_es": "Tres métodos y un dataset. (1) Lin, Wang y Dai 2024 (Front. Neurosci. 18:1306047): attention-DFCNN, que combina rasgos espaciales y temporales de HD-sEMG; con desplazamiento de 10 mm logra 94.16 ± 3.91% promedio en siete sujetos intactos y 57.08 ± 2.96% en un sujeto amputado. (2) Xu 2020 (Sensors 20:1113): detección y corrección rápida del desplazamiento con ángulo arbitrario, usando un gesto de sincronización y la ubicación interpolada del pico; sin la corrección la accuracy cae de 94.7% a 51.4%. (3) Barona López 2020: corrección de orientación basada en energía; con un gesto de sincronización encuentra el canal de máxima energía y reordena los canales a partir de él; la clasificación sube de 44.5% a 81.2% en modelos generales y de 39.8% a 94.9% en modelos por usuario. (4) SeNic 2022 no propone un método, sino un dataset: 8 canales de sEMG, y desplazamientos de electrodos medidos con una regla anular impresa en 3D, con 36 sujetos y 7 gesto bajo condiciones no ideales.",
@@ -316,6 +329,7 @@
         "electrode shifts from an 3D-printed annular ruler"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract de cada paper; sección 3.1 de Lin 2024; resultados (Tabla 2) de Xu 2020",
     "notas": "Era la pregunta 15 de la hoja. El 94.7% → 51.4% de Xu también está en el texto, no solo en la Tabla 2.",
     "split": null
@@ -324,7 +338,7 @@
     "id": "q15",
     "tipo": "varios_and",
     "origen": "hoja",
-    "estado": "validado",
+    "estado": "verificada",
     "pregunta_es": "¿Qué arquitecturas tipo transformer para clasificación de gestos se han evaluado en NinaPro DB2 y qué accuracy reportan?",
     "pregunta_en": "Which transformer-based architectures for gesture classification have been evaluated on NinaPro DB2, and what accuracy do they report?",
     "respuesta_es": "TraHGR (Zabihi 2023): 86.18% en DB2 completo (49 gestos), 88.91% en DB2-B (17 gestos), 81.44% en DB2-C (23 gestos) y 93.84% en DB2-D (9 gestos). TEMGNet (Rahimian 2021): 82.93% con ventana de 300 ms y 82.05% con 200 ms, sobre el ejercicio B de DB2.",
@@ -337,6 +351,7 @@
         "achieved a recognition accuracy of 82.93% and 82.05% for window sizes of 300ms and 200ms"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract de TraHGR y de TEMGNet",
     "notas": "Ojo: RoFormer (lin2024b) y FIT (lin2024c) también son transformers evaluados en DB2, pero para regresión de ángulos (correlación, no accuracy). Conviene precisar 'para clasificar gestos' en la pregunta.",
     "split": null
@@ -345,7 +360,7 @@
     "id": "q16",
     "tipo": "varios_and",
     "origen": "hoja",
-    "estado": "validado",
+    "estado": "verificada",
     "pregunta_es": "¿Por qué se degrada el desempeño de los clasificadores de un día a otro?",
     "pregunta_en": "Why does classifier performance degrade from one day to the next?",
     "respuesta_es": "Porque la señal sEMG no es estacionaria. Kyranou 2018 lista las causas: fatiga muscular, desplazamiento de electrodos, cambios en la postura del brazo, adaptación del usuario al dispositivo con el tiempo y diferencias entre sujetos. Du 2017 señala que entre sesiones cambian la posición de los electrodos, la postura del brazo y factores lentos como la fatiga y la impedancia electrodo-piel. Zhai 2017 menciona la colocación de electrodos, el crosstalk y el entorno de registro, con variación notable incluso de un día a otro. Campbell 2020 agrega dos factores de confusión medidos en seis datasets: la posición del miembro (13% menos de desempeño) y la intensidad de contracción (20% menos) frente al escenario controlado.",
@@ -365,6 +380,7 @@
         "classification performance was 13% and 20% lower than the controlled setting"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract de Kyranou 2018 y Campbell 2020; introducción de Du 2017 y Zhai 2017",
     "notas": null,
     "split": null
@@ -373,26 +389,32 @@
     "id": "q17",
     "tipo": "sin_respuesta",
     "origen": "hoja",
-    "estado": "pendiente",
+    "estado": "por_verificar",
     "pregunta_es": "¿Qué accuracy se obtiene al decodificar tecleo con el dataset emg2qwerty?",
     "pregunta_en": "What accuracy is obtained when decoding typing with the emg2qwerty dataset?",
     "respuesta_es": "Ninguna. El sistema debe responder que el corpus no contiene esa información.",
     "respuesta_en": "None. The system should answer that the corpus does not contain this information.",
     "evidencia": {},
+    "evidencia_parcial": {
+      "vasconez2022": [
+        "identify typing movements using EMG signals from the forearm"
+      ]
+    },
     "seccion": null,
-    "notas": "Cerca: vasconez2022 cita un trabajo que identifica movimientos de tecleo con EMG del antebrazo; no tiene relación con emg2qwerty.",
+    "notas": "Cerca: vasconez2022 cita un trabajo que identifica movimientos de tecleo con EMG del antebrazo; no tiene relación con emg2qwerty. evidencia_parcial: menciones cercanas sin resultados; el sistema puede citarlas, pero no presentarlas como la respuesta.",
     "split": null
   },
   {
     "id": "q18",
     "tipo": "sin_respuesta",
     "origen": "hoja",
-    "estado": "pendiente",
-    "pregunta_es": "¿Qué reporta el paper de Meta en Nature sobre generalización entre personas?",
+    "estado": "verificada",
+    "pregunta_es": "¿Qué reporta elpor_verificar paper de Meta en Nature sobre generalización entre personas?",
     "pregunta_en": "What does Meta's Nature paper report about generalization across people?",
     "respuesta_es": "Ninguna. El sistema debe responder que el corpus no contiene esa información.",
     "respuesta_en": "None. The system should answer that the corpus does not contain this information.",
     "evidencia": {},
+    "evidencia_parcial": {},
     "seccion": null,
     "notas": "El PDF está en data/raw/excluded/ y no debe indexarse. Cerca: ADANN (coteallard2020a) y RoFormer (lin2024b) tratan la generalización entre sujetos; el sistema no debe atribuírsela a Meta.",
     "split": null
@@ -401,12 +423,13 @@
     "id": "q19",
     "tipo": "sin_respuesta",
     "origen": "hoja",
-    "estado": "pendiente",
+    "estado": "verificada",
     "pregunta_es": "¿Cómo se usa sEMG para detectar fatiga muscular en ciclistas?",
     "pregunta_en": "How is sEMG used to detect muscle fatigue in cyclists?",
     "respuesta_es": "Ninguna. El sistema debe responder que el corpus no contiene esa información.",
     "respuesta_en": "None. The system should answer that the corpus does not contain this information.",
     "evidencia": {},
+    "evidencia_parcial": {},
     "seccion": null,
     "notas": "Cerca: el corpus trata la fatiga muscular como causa de degradación (kyranou2018, zhu2022), no en ciclistas.",
     "split": null
@@ -415,14 +438,23 @@
     "id": "q20",
     "tipo": "sin_respuesta",
     "origen": "hoja",
-    "estado": "pendiente",
+    "estado": "por_verificar",
     "pregunta_es": "¿Cuánto cuesta una prótesis mioeléctrica comercial en México?",
     "pregunta_en": "How much does a commercial myoelectric prosthesis cost in Mexico?",
-    "respuesta_es": "Ninguna. El sistema debe responder que el corpus no contiene esa información.",
-    "respuesta_en": "None. The system should answer that the corpus does not contain this information.",
+    "respuesta_es": "No se mencionan precios en México. Parajuli 2019 menciona que el costo general para una prótesis de miembro superior es de alrededor de $50,000, Pizzolato 2017 da un rango 199 dólares a cientos o incluso miles de dólares para equipos de sEMG.",
+    "respuesta_en": "Prices for Mexico are not mentioned, Parajuli 2019 puts the general price for an upper limb prosthesis at about $50,000, Pizzolato 2017 gives a price range between 199 dollars to hundreds or even thousands of dollars for sEMG equipment.",
     "evidencia": {},
-    "seccion": null,
-    "notas": "Fuga parcial: parajuli2019 da un costo general ('Upper limb prosthesis costs around $50,000'), ver q33. Decide si 'no hay datos de México, pero en general cuesta unos 50,000 dólares' cuenta como respuesta correcta.",
+    "evidencia_parcial": {
+      "parajuli2019": [
+        "Upper limb prosthesis costs around $50,000"
+      ],
+      "pizzolato2017": [
+        "The Myo armband now costs 199 dollars",
+        "ranging in terms of costs between a few hundred and several thousand dollars"
+      ]
+    },
+    "seccion": "Parajuli 2019: lista de problemas de las prótesis (en el TEI queda bajo \"Durability\"); Pizzolato 2017: Abstract e Introducción",
+    "notas": "Ningún paper habla de México (grep en los 51 TEI). Respuestas parciales: parajuli2019 da el costo general de una prótesis de miembro superior (unos $50,000, ver q33) y pizzolato2017 da el precio de equipos de sEMG (Myo a 199 dólares; equipos de cientos a miles de dólares), que no son prótesis. Criterio propuesto: correcto si dice que no hay datos de México; citar los precios generales es aceptable; inventar un precio para México, o presentar el precio del Myo como precio de una prótesis, es error. GROBID pierde el subtítulo \"Cost\" de Parajuli y lo deja dentro de \"Durability\".",
     "split": null
   },
   {
@@ -440,6 +472,7 @@
         "Eight MFI EMG electrodes"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract",
     "notas": null,
     "split": null
@@ -459,6 +492,7 @@
         "gaze, first person video, and inertial measurements of the head"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract",
     "notas": null,
     "split": null
@@ -479,6 +513,7 @@
         "BIOPAC MP36"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract",
     "notas": null,
     "split": null
@@ -498,6 +533,7 @@
         "Short-term training has no effect on synthetic tests"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract",
     "notas": null,
     "split": null
@@ -517,6 +553,7 @@
         "mean exact match rate of 78.7% and a mean Hamming loss of 2.9%"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract",
     "notas": null,
     "split": null
@@ -537,6 +574,7 @@
         "73.36% accuracy on new gestures"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract",
     "notas": null,
     "split": null
@@ -557,6 +595,7 @@
         "we improve the accuracy of our best Bioformer by 3.39%"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract",
     "notas": null,
     "split": null
@@ -576,6 +615,7 @@
         "able to reach up to 97.50%"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract",
     "notas": null,
     "split": null
@@ -595,6 +635,7 @@
         "When the number of electrodes was optimized to 8, the recognition accuracy reached 94.50%"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract; 2.4 \"PCMIRR-based channel number optimization algorithm\"",
     "notas": "Niu 2024 es CC BY-NC.",
     "split": null
@@ -615,6 +656,7 @@
         "Two datasets with 20 intact-limb and 11 amputated-limb subjects"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract",
     "notas": "Partes de este PDF salen duplicadas en pdftotext (figuras con texto encimado). Revisa cómo lo deja GROBID.",
     "split": null
@@ -634,6 +676,7 @@
         "suggesting the effectiveness of the transfer"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract",
     "notas": "Los rangos del paper usan guion largo (–): normaliza guiones antes de comparar si usas números como evidencia.",
     "split": null
@@ -653,6 +696,7 @@
         "The Coapt system can include up to eight sEMG electrodes"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Scientific overview; Market outline (tabla de sistemas de control)",
     "notas": "Lo de los ocho electrodos parece venir de una tabla.",
     "split": null
@@ -671,6 +715,7 @@
         "Upper limb prosthesis costs around $50,000"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Problemas de las prótesis actuales (lista: Cost)",
     "notas": "Pareja de q20 (México, sin respuesta). Sirve para ver si el sistema distingue un dato general de uno específico de un país.",
     "split": null
@@ -690,6 +735,7 @@
         "methods based on feature learning with a special emphasis on"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract",
     "notas": null,
     "split": null
@@ -709,6 +755,7 @@
         "we set the window length to 200ms for NinaProDB1 and NinaProDB2"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract",
     "notas": null,
     "split": null
@@ -728,6 +775,7 @@
         "the intersubject gesture recognition accuracy of 84.9%, 82.0%, 65.6%, 70.2%, and 88.9%"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract",
     "notas": null,
     "split": null
@@ -748,6 +796,7 @@
         "20 participants per dataset"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract; Section V (SCADANN)",
     "notas": "Pareja natural de q12 (Zhai 2017): SCADANN se compara contra ese esquema de voto mayoritario.",
     "split": null
@@ -766,6 +815,7 @@
         "Ensemble learning and deep learning algorithms outperformed other classical machine learning algorithms"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Abstract",
     "notas": null,
     "split": null
@@ -786,6 +836,7 @@
         "Limb position (5 positions)"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Tabla 1",
     "notas": "Sale de la Tabla 1: mide si las tablas sobreviven al parseo. Evidencia de tabla: pie de tabla más valores de una sola celda (no frases que crucen celdas).",
     "split": null
@@ -813,6 +864,7 @@
         "set of TD features): MAV, WL, ZC, and SSC"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": null,
     "notas": "El paper original de Hudgins (1993) está descartado: la respuesta solo viene de papers que lo citan. Evité el apóstrofo de \"Hudgins’\" en la evidencia porque es tipográfico (’).",
     "split": null
@@ -834,6 +886,7 @@
         "The EMG-EPN-612 dataset was divided into two groups, each group has 306 individuals"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": null,
     "notas": "Macías 2025 agrega que las etiquetas del grupo de prueba no son públicas.",
     "split": null
@@ -861,6 +914,7 @@
         "49 diverse hand movements performed by 40 intact subjects"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": null,
     "notas": "Los papers no coinciden: 49 o 50 según si cuentan el reposo. atzori2014 da los 40 sujetos, pero no el número de gestos en la misma frase.",
     "split": null
@@ -888,6 +942,7 @@
         "Six finger movements of 10 subjects were tested in the Ninapro DB2 dataset"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": null,
     "notas": "Los tres comparten primer autor y casi el mismo protocolo: es una buena prueba de si el sistema confunde papers parecidos.",
     "split": null
@@ -911,6 +966,7 @@
         "reaching 91.98% for 128 electrodes and a window size of 250 ms"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": null,
     "notas": "El dataset de 65 gestos es el de malesevic2021. En el PDF de ViT-HGR, '78,210' sale como '78, 210'.",
     "split": null
@@ -934,6 +990,7 @@
         "utilizing the sEMG data from 17 motions performed by 8 transradial amputees"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": null,
     "notas": "La trampa es la comparabilidad: una buena respuesta debe decir que los protocolos son distintos.",
     "split": null
@@ -956,6 +1013,7 @@
         "nineteen able-bodied subjects performing twelve hand gestures in three forearm orientations"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": null,
     "notas": null,
     "split": null
@@ -970,8 +1028,17 @@
     "respuesta_es": "Ninguna. El corpus menciona el reconocimiento de lenguaje de señas solo como aplicación o al citar otros trabajos, sin reportar resultados. El sistema debe decir que no tiene esa información.",
     "respuesta_en": "None. The corpus only mentions sign language recognition as an application or when citing other work, without reporting results. The system should say that it does not have that information.",
     "evidencia": {},
+    "evidencia_parcial": {
+      "hu2018": [
+        "used HMM classifier to create a sign language recognition system based on sEMG",
+        "applied Myo armband to collect sEMG signals for sign language recognition"
+      ],
+      "baronalopez2020": [
+        "these models have been applied in sign language recognition (English, Arabic, Italian)"
+      ]
+    },
     "seccion": null,
-    "notas": "Menciones cercanas sin resultados: hu2018 (cita a Yun et al. y a Amor et al.), baronalopez2020, jaramillo2020, moslhi2024, phinyomark2018b, pradhan2022, vasconez2022 y macias2025.",
+    "notas": "Menciones cercanas sin resultados: hu2018 (cita a Yun et al. y a Amor et al.), baronalopez2020, jaramillo2020, moslhi2024, phinyomark2018b, pradhan2022, vasconez2022 y macias2025. evidencia_parcial: menciones cercanas sin resultados; el sistema puede citarlas, pero no presentarlas como la respuesta.",
     "split": null
   },
   {
@@ -984,8 +1051,19 @@
     "respuesta_es": "Ninguna. El corpus trata del miembro superior; los trabajos de rodilla y miembro inferior solo aparecen como citas, sin resultados. El sistema debe decir que no tiene esa información.",
     "respuesta_en": "None. The corpus is about the upper limb; work on the knee and lower limb only appears as citations, without results. The system should say that it does not have that information.",
     "evidencia": {},
+    "evidencia_parcial": {
+      "lin2025": [
+        "simultaneously classify the movement of the lower extremities and predict the corresponding knee angles"
+      ],
+      "lin2024c": [
+        "utilized an enhanced CNN model to predict knee angles with increased accuracy"
+      ],
+      "phinyomark2018a": [
+        "estimation of human lower limb flexion and extension joint angles during walking"
+      ]
+    },
     "seccion": null,
-    "notas": "Menciones cercanas: lin2024c (Liu et al. 2019), lin2025 (Gautam et al.) y phinyomark2018a (DBN para ángulos del miembro inferior al caminar).",
+    "notas": "Menciones cercanas: lin2024c (Liu et al. 2019), lin2025 (Gautam et al.) y phinyomark2018a (DBN para ángulos del miembro inferior al caminar). evidencia_parcial: menciones cercanas sin resultados; el sistema puede citarlas, pero no presentarlas como la respuesta.",
     "split": null
   },
   {
@@ -1003,6 +1081,7 @@
         "Each matrix signal was resized to 72"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "3.5 \"Classification using ST\"",
     "notas": null,
     "split": null
@@ -1024,6 +1103,7 @@
         "85.92"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "4.1 \"Training on NinaPro DB1\" (Tabla 8)",
     "notas": "Sale de la Tabla 8. Ojo: en CapgMyo DB-A el texto dice 74.90% para FFT y la Tabla 9 dice 79.90%; el paper se contradice. Evidencia de tabla: pie de tabla más valores de una sola celda (no frases que crucen celdas).",
     "split": null
@@ -1043,6 +1123,7 @@
         "smoothing, normalization, segmentation"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "2 \"Pattern recognition-based sEMG\"",
     "notas": null,
     "split": null
@@ -1062,6 +1143,7 @@
         "thumb position, power type, opposition type, and virtual finger assignments"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "1 \"Introduction\"",
     "notas": "La taxonomía es de Feix et al.; en el corpus solo aparece citada en Li 2021.",
     "split": null
@@ -1082,6 +1164,7 @@
         "into linear and non-linear types"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "2.3 \"Taxonomies for categorizing myoelectric hand gesture recognition models\"",
     "notas": null,
     "split": null
@@ -1101,6 +1184,7 @@
         "The pooling layers were not adopted in Block 2"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "2.2.2 \"Feature Extraction and Classification\"",
     "notas": "El texto de este PDF sale duplicado y encimado en pdftotext; revisa cómo lo deja GROBID.",
     "split": null
@@ -1120,6 +1204,7 @@
         "MEBA by OT Bioelettronica"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "2.1 \"Experimental Setup\"",
     "notas": null,
     "split": null
@@ -1139,6 +1224,7 @@
         "was trained and applied to video gesture recognition with 98.7% accuracy"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "2.4 \"Pre-Processing and Labelling\"",
     "notas": null,
     "split": null
@@ -1159,6 +1245,7 @@
         "only flexions of adjacent fingers were included in the list"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Methods, \"Recording protocol\"",
     "notas": null,
     "split": null
@@ -1178,6 +1265,7 @@
         "This intentionally induced uncertainty in the exact electrode positions"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Methods, \"Acquisition setup\"",
     "notas": null,
     "split": null
@@ -1197,6 +1285,7 @@
         "The second best performance was achieved by the IM decoder"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Results, \"Offline analysis\"",
     "notas": null,
     "split": null
@@ -1217,6 +1306,7 @@
         "we employed a linear discriminant analysis (LDA) classifier"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Methods, \"Signal preprocessing and classifier training\"",
     "notas": null,
     "split": null
@@ -1237,6 +1327,7 @@
         "DB-c contains 12 basic movements of the fingers"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "2.1.3 (descripción de las sub-bases)",
     "notas": null,
     "split": null
@@ -1258,6 +1349,7 @@
         "80.72"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "Arquitectura (Fig. 1) y Tabla II",
     "notas": "Los números por rama salen de la Tabla II. Evidencia de tabla: pie de tabla más valores de una sola celda (no frases que crucen celdas).",
     "split": null
@@ -1278,6 +1370,7 @@
         "a wireless, 10-channel, dry-electrode, 3D printed sEMG armband"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "2.1 \"EMG Data\"",
     "notas": null,
     "split": null
@@ -1297,6 +1390,7 @@
         "a comprehensive subset of 79 of the most commonly used features"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "2.2 \"Handcrafted Features\"",
     "notas": null,
     "split": null
@@ -1316,6 +1410,7 @@
         "Among the articles surveyed, these make up 50% of all experiments"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "3.3 \"Experimental Protocols\"",
     "notas": null,
     "split": null
@@ -1335,6 +1430,7 @@
         "incorporating limb position measurements taken from extra sensor modalities"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "3.4 \"State-of-the-Art Approaches\"",
     "notas": "Cerca: q46 y rumman2024 tratan la orientación del antebrazo, pero no estas estrategias.",
     "split": null
@@ -1355,6 +1451,7 @@
         "the frequency drops at 50 Hz, highlighting the presence of the notch filter"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "3.1 \"Signal spectrum\"",
     "notas": "Complementa q02 (Myo a 200 Hz con 8 electrodos) sin repetirla.",
     "split": null
@@ -1375,6 +1472,7 @@
         "14 Delsys Trigno sEMG Wireless electrodes"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "III \"Material and Methods\" (B y C)",
     "notas": null,
     "split": null
@@ -1394,6 +1492,7 @@
         "Average accuracies of 88.96% and 89.84% were achieved"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "III.B \"Pattern Recognition Dataset\" (Results)",
     "notas": null,
     "split": null
@@ -1412,6 +1511,7 @@
         "The average RMSE of all fingers is 6.09% MVC"
       ]
     },
+    "evidencia_parcial": {},
     "seccion": "III.C \"One-DoF Dataset\" (Results)",
     "notas": null,
     "split": null
